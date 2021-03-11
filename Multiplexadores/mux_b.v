@@ -13,7 +13,7 @@ always @(*) begin
         2'b00 : mux_b_out = regB_out;
         2'b01 : mux_b_out = 32'd4;
         2'b10 : mux_b_out = singExtend16_32_out;
-        2'b11 : mux_b_control =  shiftleft_2_out;
+        2'b11 : mux_b_out = shiftleft_2_out;
 
     endcase
 end

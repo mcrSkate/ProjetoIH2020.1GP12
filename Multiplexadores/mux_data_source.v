@@ -12,7 +12,7 @@ module mux_dataSource (
     input wire [31:0] regB_out;
     output wire [31:0] mux_dataSource_out;
 );
-always @* begin
+always @(*) begin
     case (mux_dataSource_control)
         4'b0000 : mux_dataSource_out = AluOut_out;
         4'b0001 : mux_dataSource_out = SLS_out;

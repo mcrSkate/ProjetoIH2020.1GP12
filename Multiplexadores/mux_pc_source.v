@@ -7,7 +7,7 @@ module mux_pc_source (
     input wire [31:0] epc_out;
     output wire [31:0] mux_pc_source_out;
 );
-always @* begin
+always @(*) begin
     case (mux_pc_source_control)
         3'b000 : mux_pc_source_out = ULA_out;
         3'b001 : mux_pc_source_out = AluOut_out;

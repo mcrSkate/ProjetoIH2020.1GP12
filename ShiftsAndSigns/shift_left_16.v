@@ -3,7 +3,7 @@ module shift_left_16 (
     output wire [31:0] shift_left_16_out;
 );
     always @(*) begin
-        assign shift_left_16_out = {Instr15_0, 16'd0};
+        assign shift_left_16_out <= {Instr15_0, 16'd0};
     end
 
     

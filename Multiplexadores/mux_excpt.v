@@ -5,9 +5,9 @@ module mux_excpt (
 
 always @(*) begin
     case (excpt_Control)
-        2'b00 : mux_excpt_out = 32'd253;
-        2'b01 : mux_excpt_out = 32'd254;
-        2'b10 : mux_excpt_out = 32'd255;
+        2'b00 : mux_excpt_out <= 32'd253;
+        2'b01 : mux_excpt_out <= 32'd254;
+        2'b10 : mux_excpt_out <= 32'd255;
     endcase
 end
     

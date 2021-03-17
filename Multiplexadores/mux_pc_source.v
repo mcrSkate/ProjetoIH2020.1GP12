@@ -9,11 +9,11 @@ module mux_pc_source (
 );
 always @(*) begin
     case (mux_pc_source_control)
-        3'b000 : mux_pc_source_out = ULA_out;
-        3'b001 : mux_pc_source_out = AluOut_out;
-        3'b010 : mux_pc_source_out = concatena_pc_out;
-        3'b011 : mux_pc_source_out = mdr_out;
-        3'b100 : mux_pc_source_out = epc_out;
+        3'b000 : mux_pc_source_out <= ULA_out;
+        3'b001 : mux_pc_source_out <= AluOut_out;
+        3'b010 : mux_pc_source_out <= concatena_pc_out;
+        3'b011 : mux_pc_source_out <= mdr_out;
+        3'b100 : mux_pc_source_out <= epc_out;
     endcase
 end
     

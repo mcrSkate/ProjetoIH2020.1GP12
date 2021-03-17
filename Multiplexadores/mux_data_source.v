@@ -14,16 +14,16 @@ module mux_dataSource (
 );
 always @(*) begin
     case (mux_dataSource_control)
-        4'b0000 : mux_dataSource_out = AluOut_out;
-        4'b0001 : mux_dataSource_out = SLS_out;
-        4'b0010 : mux_dataSource_out = LO_out;
-        4'b0011 : mux_dataSource_out = HI_out;
-        4'b0100 : mux_dataSource_out = shiftReg_out;
-        4'b0101 : mux_dataSource_out = LT_out;
-        4'b0110 : mux_dataSource_out = signalExtend_out;
-        4'b0111 : mux_dataSource_out = shiftleft16_out;
-        4'b1000 : mux_dataSource_out = regA_out;
-        4'b1001 : mux_dataSource_out = regB_out;
+        4'b0000 : mux_dataSource_out <= AluOut_out;
+        4'b0001 : mux_dataSource_out <= SLS_out;
+        4'b0010 : mux_dataSource_out <= LO_out;
+        4'b0011 : mux_dataSource_out <= HI_out;
+        4'b0100 : mux_dataSource_out <= shiftReg_out;
+        4'b0101 : mux_dataSource_out <= LT_out;
+        4'b0110 : mux_dataSource_out <= signalExtend_out;
+        4'b0111 : mux_dataSource_out <= shiftleft16_out;
+        4'b1000 : mux_dataSource_out <= regA_out;
+        4'b1001 : mux_dataSource_out <= regB_out;
     endcase
     
 end

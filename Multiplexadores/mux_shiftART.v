@@ -8,8 +8,8 @@ module mux_shiftART(
 always @(*) begin
     case (mux_shiftART_control)
          
-        1'b0 : mux_shiftART_out = regB_out;
-        1'b1 : mux_shiftART_out = inst10_6_out;
+        1'b0 : mux_shiftART_out <= regB_out;
+        1'b1 : mux_shiftART_out <= inst10_6_out;
 
     endcase
 end

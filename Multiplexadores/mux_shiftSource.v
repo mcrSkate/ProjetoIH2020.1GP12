@@ -8,8 +8,8 @@ module mux_shiftSource(
 always @(*) begin
     case (mux_shiftSource_control)
          
-        1'b0 : mux_shiftSource_out = regA_out;
-        1'b1 : mux_shiftSource_out = regB_out;
+        1'b0 : mux_shiftSource_out <= regA_out;
+        1'b1 : mux_shiftSource_out <= regB_out;
 
     endcase
 end

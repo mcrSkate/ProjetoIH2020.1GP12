@@ -10,10 +10,10 @@ module mux_iord(
 always @(*) begin
     case (mux_iord_control)
          
-        2'b00 : mux_iord_out = pc_out;
-        2'b01 : mux_iord_out = aluOut_out;
-        2'b10 : mux_iord_out = ula_out;
-        2'b11 : mux_iord_out = exec_out;
+        2'b00 : mux_iord_out <= pc_out;
+        2'b01 : mux_iord_out <= aluOut_out;
+        2'b10 : mux_iord_out <= ula_out;
+        2'b11 : mux_iord_out <= exec_out;
 
     endcase
 end

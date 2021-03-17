@@ -3,7 +3,7 @@ module shift_left_2 (
     output wire [27:0] shift_left_2_out;
 );
 always @(*) begin
-    shift_left_2_out = inst_concatener_out << 2;
+    assign shift_left_2_out = inst_concatener_out << 2;
 end
     
 endmodule

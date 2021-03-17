@@ -9,9 +9,9 @@ module mux_a (
 always @(*) begin
     case(mux_a_control)
 
-        2'b00 : mux_a_out = pc_out;
-        2'b01 : mux_a_out = regA_out;
-        2'b10 : mux_a_out = mdr_out;
+       assign 2'b00 : mux_a_out = pc_out;
+       assign 2'b01 : mux_a_out = regA_out;
+       assign 2'b10 : mux_a_out = mdr_out;
 
     endcase
 end

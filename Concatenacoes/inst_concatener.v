@@ -5,7 +5,7 @@ module inst_concatener (
     output wire [25:0] inst_concatener_out;
 );
 always @(*) begin
-    assign inst_concatener_out <= {Instr25_21, Instr20_16, Instr15_0};
+    assign inst_concatener_out = {Instr25_21, Instr20_16, Instr15_0};
 end
     
 endmodule

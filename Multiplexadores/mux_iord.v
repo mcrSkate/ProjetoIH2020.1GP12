@@ -4,7 +4,7 @@ module mux_iord(
     input wire  [31:0] aluOut_out,
     input wire  [31:0] ula_out,
     input wire  [31:0] exec_out,
-    output wire [31:0] mux_iord_out
+    output reg [31:0] mux_iord_out
 );
 
 always @(*) begin

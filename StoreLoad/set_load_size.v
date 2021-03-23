@@ -1,7 +1,7 @@
 module set_load_size (
     input wire [31:0] memory_data_register_out,
     input wire [1:0] set_load_size_control,
-    output wire [31:0] set_load_size_out
+    output reg [31:0] set_load_size_out
 );
 always @(*) begin
     case (set_load_size_control)

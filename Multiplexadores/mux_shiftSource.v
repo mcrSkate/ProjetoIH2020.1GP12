@@ -2,7 +2,7 @@ module mux_shiftSource(
     input wire  [0:0]  mux_shiftSource_control,
     input wire  [31:0] regA_out,
     input wire  [31:0] regB_out,
-    output wire [31:0] mux_shiftSource_out
+    output reg [31:0] mux_shiftSource_out
 );
 
 always @(*) begin

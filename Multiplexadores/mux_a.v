@@ -3,7 +3,7 @@ module mux_a (
     input wire  [31:0] pc_out,
     input wire  [31:0] regA_out,
     input wire  [31:0] mdr_out,
-    output wire [31:0] mux_a_out
+    output reg [31:0] mux_a_out
 );
 
 always @(*) begin

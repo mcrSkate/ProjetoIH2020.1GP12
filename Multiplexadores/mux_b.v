@@ -4,7 +4,7 @@ module mux_b (
     input wire  [31:0] num4_out,
     input wire  [31:0] singExtend16_32_out,
     input wire  [31:0] shift_left_2_mux_out,
-    output wire [31:0] mux_b_out
+    output reg [31:0] mux_b_out
 );
 
 always @(*) begin

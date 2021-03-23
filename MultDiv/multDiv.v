@@ -9,17 +9,20 @@ module multDiv (
     integer i;
 );
 
+reg operation
 reg ultimoBitAnt;
 reg [5:0] contador;
 
 initial begin
     ultimoBitAnt = 1'b0;
     contador = 6'b0;
+    operation = mdControl;
+    
 end
 
 always @(posedge clock) begin
     
-    if (mdControl == 1'b0) begin
+    if (operation == 1'b0) begin
         
     end
 

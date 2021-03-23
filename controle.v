@@ -18,7 +18,8 @@ module Controle(
     output reg memControl //memória
     output reg PCControl 
     output reg regControl //banco de registradores
-    output reg mdControl //multdiv
+    output reg multControl
+    output reg divControl
     output reg memData
     output reg epcControl 
     output reg aluOutControl

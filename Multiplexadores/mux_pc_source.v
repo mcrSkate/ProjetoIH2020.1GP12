@@ -1,11 +1,11 @@
 module mux_pc_source (
-    input wire [2:0] mux_pc_source_control;
-    input wire [31:0] ULA_out;
-    input wire [31:0] AluOut_out;
-    input wire [31:0] concatena_pc_out;
-    input wire [31:0] mdr_out;
-    input wire [31:0] epc_out;
-    output wire [31:0] mux_pc_source_out;
+    input wire [2:0] mux_pc_source_control,
+    input wire [31:0] ULA_out,
+    input wire [31:0] AluOut_out,
+    input wire [31:0] concatena_pc_out,
+    input wire [31:0] mdr_out,
+    input wire [31:0] epc_out,
+    output wire [31:0] mux_pc_source_out
 );
 always @(*) begin
     case (mux_pc_source_control)

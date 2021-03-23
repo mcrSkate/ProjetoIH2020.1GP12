@@ -1,8 +1,8 @@
 module mux_shiftART(
-    input wire  [0:0]  mux_shiftART_control;
-    input wire  [4:0] regB_out;
-    input wire  [10:6] inst10_6_out;
-    output wire [4:0] mux_shiftART_out;
+    input wire  [0:0]  mux_shiftART_control,
+    input wire  [4:0] regB_out,
+    input wire  [10:6] inst10_6_out,
+    output wire [4:0] mux_shiftART_out
 );
 
 always @(*) begin

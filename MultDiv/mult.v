@@ -1,12 +1,12 @@
 module mult (
-    input wire [31:0] regA_out;
-    input wire [31:0] regB_out;
-    input wire [0:0] multControl;
-    input wire clock;
-    input wire reset;
-    output wire finalMult;
-    output wire [31:0] hi_entrance;
-    output wire [31:0] lo_entrance;
+    input wire [31:0] regA_out,
+    input wire [31:0] regB_out,
+    input wire [0:0] multControl,
+    input wire clock,
+    input wire reset,
+    output reg finalMult,
+    output reg [31:0] hi_entrance,
+    output reg [31:0] lo_entrance
 );
 
 reg inicio;

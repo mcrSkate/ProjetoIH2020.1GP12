@@ -1,8 +1,8 @@
 module set_store_size (
-    input wire [1:0] set_store_size_control;
-    input wire [31:0] b_out;
-    input wire [31:0] memory_data_register_out;
-    output wire [31:0] set_store_size_out;
+    input wire [1:0] set_store_size_control,
+    input wire [31:0] b_out,
+    input wire [31:0] memory_data_register_out,
+    output wire [31:0] set_store_size_out
 );
     always @(*) begin
         case (set_store_size_control)

@@ -1,10 +1,10 @@
 module mux_b (
-    input wire  [1:0]  mux_b_control;
-    input wire  [31:0] regB_out;
-    input wire  [31:0] num4_out;
-    input wire  [31:0] singExtend16_32_out;
-    input wire  [31:0] shift_left_2_mux_out;
-    output wire [31:0] mux_b_out;
+    input wire  [1:0]  mux_b_control,
+    input wire  [31:0] regB_out,
+    input wire  [31:0] num4_out,
+    input wire  [31:0] singExtend16_32_out,
+    input wire  [31:0] shift_left_2_mux_out,
+    output wire [31:0] mux_b_out
 );
 
 always @(*) begin

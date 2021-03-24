@@ -12,7 +12,8 @@ always @(*) begin
         2'b00 : mux_regDest_out <= inst20_16_out;
         2'b01 : mux_regDest_out <= inst15_11_out;
         2'b10 : mux_regDest_out <= 5'd31;
-
+        2'b11 : mux_regDest_out <= 5'd29;
+        
     endcase
 end
     

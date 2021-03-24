@@ -24,6 +24,8 @@ always @(*) begin
         4'b0111 : mux_dataSource_out <= shiftleft16_out;
         4'b1000 : mux_dataSource_out <= regA_out;
         4'b1001 : mux_dataSource_out <= regB_out;
+        4'b1010 : mux_dataSource_out <= 32'd227;
+
     endcase
     
 end

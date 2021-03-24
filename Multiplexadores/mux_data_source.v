@@ -1,16 +1,16 @@
 module mux_dataSource (
-    input wire [3:0]mux_dataSource_control;
-    input wire [31:0] AluOut_out;
-    input wire [31:0] SLS_out;
-    input wire [31:0] LO_out;
-    input wire [31:0] HI_out;
-    input wire [31:0] shiftReg_out;
-    input wire [31:0] LT_out;
-    input wire [31:0] signalExtend_out;
-    input wire [31:0] shiftleft16_out;
-    input wire [31:0] regA_out;
-    input wire [31:0] regB_out;
-    output wire [31:0] mux_dataSource_out;
+    input wire [3:0]mux_dataSource_control,
+    input wire [31:0] AluOut_out,
+    input wire [31:0] SLS_out,
+    input wire [31:0] LO_out,
+    input wire [31:0] HI_out,
+    input wire [31:0] shiftReg_out,
+    input wire [31:0] LT_out,
+    input wire [31:0] signalExtend_out,
+    input wire [31:0] shiftleft16_out,
+    input wire [31:0] regA_out,
+    input wire [31:0] regB_out,
+    output reg [31:0] mux_dataSource_out
 );
 always @(*) begin
     case (mux_dataSource_control)
@@ -24,6 +24,8 @@ always @(*) begin
         4'b0111 : mux_dataSource_out <= shiftleft16_out;
         4'b1000 : mux_dataSource_out <= regA_out;
         4'b1001 : mux_dataSource_out <= regB_out;
+        4'b1010 : mux_dataSource_out <= 32'd227;
+
     endcase
     
 end

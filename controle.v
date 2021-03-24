@@ -27,8 +27,12 @@ module Controle(
     output reg shiftSource,
     output reg shiftArtSource,
     output reg RegWrite,
+    output reg AControl,
+    output reg BControl,
+    output reg HILOControl,
     output reg muxHI,
     output reg muxLO,
+    
 
     /*o A, B, HI e LO Control eu acredito que entram nos registradores normais, por isso não estõ aqui, mas vou checar*/
 
@@ -49,8 +53,8 @@ module Controle(
 
 
 //parameters --mudar tamanho necessário depois
-    reg [6:0] state
-    reg [31:0] counter
+    reg [6:0] state;
+    integer counter;
 
 
 //opcodes --códigos em hexadecimal (especificação projeto)
@@ -92,8 +96,8 @@ module Controle(
 	parameter fRTE = 6'h13;
     parameter fXCHG = 6'h5; 
 
-//estados --passar pra binário depois --como fazer os waits
-    parameter RESET = 7'b0000000;
+//estados
+    parameter START = 7'b0000000;
     parameter ADD = 7'b0000001;
     parameter ADD_AND_SUB = 7'b0000010; //write em comum
     parameter ADDI = 7'b0000011; 
@@ -121,7 +125,7 @@ module Controle(
     parameter JR = 7'b0011001;
     parameter LB = 7'b0011010;
     parameter LH = 7'b0011011;
-    parameter LOAD_WAIT = 7'b0011100; //checar se dá pra usar o mesmo
+    parameter LOAD_WAIT = 7'b0011100; 
     parameter LUI = 7'b0011101;
     parameter LW = 7'b0011110;
     parameter LW_LH_LB = 7'b0011111;
@@ -153,15 +157,317 @@ module Controle(
 
 //inicial begin (reset)
     initial begin
-        counter = 31'b0
-        state <= RESET;
+        counter = 0;
+        state <= FETCH; //sempre realizar reset no começo
     end
 
 // always relacionado ao clock
-//EXCEÇÕES
-    RESET: begin //(Reset --> valor 227 no reg 29, vai pro fetch)
-        
+    always @(posedge clk) begin
+        if(reset) begin //(Reset --> valor 227 no reg 29, vai pro fetch)
+            memControl = 1'b0;
+            PCControl = 1'b0; 
+            regControl = 1'b1; //
+            multControl = 1'b0;
+            divControl = 1'b0;
+            memData = 1'b0;
+            epcControl = 1'b0; 
+            aluOutControl = 1'b0;
+            IRControl = 1'b0; 
+            shiftSource = 1'b0;
+            shiftArtSource = 1'b0;
+            RegWrite = 1'b0;
+            AControl = 1'b0;
+            BControl = 1'b0;
+            HILOControl = 1'b0;
+            muxHI = 1'b0;
+            muxLO = 1'b0;
+            slsControl = 2'b0; 
+            sssControl = 2'b0; 
+            IorD = 2'b0; 
+            muxAControl = 2'b0;
+            muxBControl = 2'b0; 
+            excptControl = 2'b0; 
+            regDest = 2'b11; // 
+            PCSource = 3'b0; 
+            shiftControl = 3'b0;
+            aluControl = 3'b0;   
+            dataSource = 4'b1010; //
+            state <= FETCH;
+        end
+        else begin
+            case(state)
+                RESET: begin
+                    memControl = 1'b0;
+                    PCControl = 1'b0; 
+                    regControl = 1'b1; //
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;
+                    RegWrite = 1'b0;
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b11; // 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b1010; //
+                    state <= FETCH;
+                end
+               FETCH: begin
+                    memControl = 1'b0; //
+                    PCControl = 1'b1; // 
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;
+                    RegWrite = 1'b0;
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; // 
+                    muxAControl = 2'b0; //
+                    muxBControl = 2'b01; // 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; // 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b001; //   
+                    dataSource = 4'b0;
+                    state <= FETCH2;
+                end
+                FETCH2: begin
+                    memControl = 1'b0; //
+                    PCControl = 1'b1; // 
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;
+                    RegWrite = 1'b0;
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; //
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    state <= WAIT;
+                end
+                WAIT: begin
+                    memControl = 1'b0;
+                    PCControl = 1'b0; // 
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b1; // 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;
+                    RegWrite = 1'b0;
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    state <= DECODE;
+                end
+                DECODE: begin
+                    memControl = 1'b0;
+                    PCControl = 1'b0; 
+                    regControl = 1'b0; //
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b1; //
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;
+                    RegWrite = 1'b0;
+                    AControl = 1'b1; //se usa esse n precisa do regControl
+                    BControl = 1'b1;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0; //
+                    muxBControl = 2'b11; // 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b001; //   
+                    dataSource = 4'b0;
+                    state <= START;
+                end
+                START: begin
+                    case(opcode)
+                        opRTYPE: begin
+                            case(funct)
+                                fADD: begin
+                                    state <= ADD;
+                                end
+                                fSUB: begin
+                                    state <= SUB;
+                                end
+                                fAND: begin
+                                    state <= AND;
+                                end
+                                fDIV: begin
+                                    state <= DIV;
+                                end
+                                fMULT: begin
+                                    state <= MULT;
+                                end
+                                fMFHI: begin
+                                    state <= MFHI;
+                                end
+                                fMFLO: begin
+                                    state <= MFLO;
+                                end
+                                fSLL: begin
+                                    state <= SLL;
+                                end
+                                fSLLV: begin
+                                    state <= SLLV;
+                                end
+                                fSLT: begin
+                                    state <= SLT;
+                                end
+                                fJR: begin
+                                    state <= JR;
+                                end
+                                fBREAK: begin
+                                    state <= BREAK;
+                                end
+                                fRTE: begin
+                                    state <= RTE;
+                                end
+                                fXCHG: begin
+                                    state <= XCHG1;
+                                end
+                            endcase
+                        end
+                        opADDI: begin
+                            state <= ADDI;
+                        end
+                        opADDIU: begin
+                            state <= ADDIU;
+                        end
+                        opBEQ: begin
+                            state <= BEQ;
+                        end
+                        opBNE: begin
+                            state <= BNE;
+                        end
+                        opBLE: begin
+                            state <= BLE;
+                        end
+                        opBGT: begin
+                            state <= BGT;
+                        end
+                        opBLM: begin
+                            state <= BLM;
+                        end
+                        opLB: begin
+                            state <= LW_LH_LB;
+                        end
+                        opLH: begin
+                            state <= LW_LH_LB;
+                        end
+                        opLW: begin
+                            state <= LW_LH_LB;
+                        end
+                        opSB: begin
+                            state <= SW_SH_SB;
+                        end
+                        opSW: begin
+                            state <= SW_SH_SB;
+                        end  
+                        opSH: begin
+                            state <= SW_SH_SB;
+                        end
+                        opLUI: begin
+                            state <= LUI;
+                        end    
+                        opSLTI: begin
+                            state <= SLTI;
+                        end
+                        opJ: begin
+                            state <= J;
+                        end
+                        opJAL: begin
+                            state <= JAL1;
+                        end 
+
+                        default: begin //caso sem opcode
+							state <= NO_OPCODE;
+                        end       
+                    endcase                    
+                end
+                ADD: begin
+                    
+                end
+
+
+
+            endcase
+                 
+        end
     end
+//EXCEÇÕES
+    
 /* if (estado) begin
     atualiza estados de saída 
     

@@ -1015,6 +1015,9 @@ module Controle(
                     dataSource = 4'b0;
                     state <= WAIT_FINAL;
                 end
+                WAIT_FINAL: begin
+                    state <= FETCH;
+                end
 
 
             endcase

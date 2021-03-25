@@ -5,6 +5,7 @@ module div (
     input wire reset,
     input wire divControl,
     output reg zeroDiv,
+    output reg finalDiv,
     output reg [31:0] hi_entrance,
     output reg [31:0] lo_entrance
 );
@@ -29,10 +30,12 @@ always @(posedge clock) begin
         resto = 32'b0;
         auxB = 32'b0;
         zeroDiv = 1'b0;
+        finalDiv = 1'b0;
         hi_entrance = 32'b0;
         lo_entrance = 32'b0;
     end else if (divControl == 1'b1 && inicial == 1'b1) begin
         zeroDiv = 1'b0;
+        finalDiv = 1'b0;
         hi_entrance = 32'b0;
         lo_entrance = 32'b0;
         sinalA = 1'b0;
@@ -52,6 +55,7 @@ always @(posedge clock) begin
         end
         if(auxB == 32'b0) begin
             zeroDiv = 1'b1;
+            finalDiv = 1'b1;
             hi_entrance = 32'b01111111111111111111111111111111;
             lo_entrance = 32'b01111111111111111111111111111111;
         end
@@ -67,6 +71,7 @@ always @(posedge clock) begin
             end else begin
                 lo_entrance = ~quociente + 1;
             end
+            finalDiv = 1'b1;
         end else begin
             resto = resto - auxB;
             quociente = quociente + 1;

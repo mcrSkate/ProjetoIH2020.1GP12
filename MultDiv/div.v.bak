@@ -52,6 +52,7 @@ always @(posedge clock) begin
         end
         if(auxB == 32'b0) begin
             zeroDiv = 1'b1;
+            finalDiv = 1'b1;
             hi_entrance = 32'b01111111111111111111111111111111;
             lo_entrance = 32'b01111111111111111111111111111111;
         end

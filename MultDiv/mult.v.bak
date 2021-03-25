@@ -55,6 +55,7 @@ always @(posedge clock) begin
         end else if(contador == 7'b0100000)begin
             hi_entrance[31:0] = produto[63:32];
             lo_entrance[31:0] = produto[31:0];
+            finalMult = 1'b1;
             inicio = 1'b1;
         end
     end

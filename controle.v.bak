@@ -12,13 +12,12 @@ module controle(
     input lesser,
     input overflow,
     input zeroDiv,
-    input noOpcode, //é o que a gente chamou de BR, pelo que eu vi serve pra opcode inexistente, checar isso
 
     //outputs
     output reg memControl, //memória
     output reg PCControl, 
     output reg regControl, //banco de registradores
-    output reg multControl,
+    output reg multControl, 
     output reg divControl,
     output reg memData,
     output reg epcControl, 
@@ -26,7 +25,6 @@ module controle(
     output reg IRControl, //registrador de instruções
     output reg shiftSource,
     output reg shiftArtSource,
-    output reg RegWrite,
     output reg AControl,
     output reg BControl,
     output reg HILOControl,
@@ -54,7 +52,7 @@ module controle(
 
 //parameters --mudar tamanho necessário depois
     reg [6:0] state;
-    integer counter;
+    integer contador;
 
 
 //opcodes --códigos em hexadecimal (especificação projeto)
@@ -105,20 +103,27 @@ module controle(
     parameter ADDIU = 7'b0000101;
     parameter AND = 7'b0000110;
     parameter BEQ = 7'b0000111;
+    parameter BEQ2 = 7'b1010101;
     parameter BGT = 7'b0001000;
+    parameter BGT2 = 7'b0111011;
     parameter BLE = 7'b0001001;
+    parameter BLE2 = 7'b0111010;
     parameter BLM = 7'b0001010;
     parameter BLM2 = 7'b0001011;
+    parameter BLM3 = 7'b0111101;
     parameter BLM_WAIT = 7'b0001100;
     parameter BNE = 7'b0001101;
-    parameter BRANCHPC = 7'b0001110;
+    parameter BNE2 = 7'b1101011;
     parameter BREAK = 7'b00001111;
     parameter DECODE = 7'b0010000;
     parameter DIV = 7'b0010001;
+    parameter DIV2 = 7'b1000011;
+    parameter DIV_WAIT = 7'b1000001;
     parameter DIV0 = 7'b0010010;
     parameter EXCEPTION = 7'b0010011;
     parameter FETCH = 7'b0010100; 
     parameter FETCH2 = 7'b0010101;
+    parameter FINAL_EXCEPTION = 7'b0001110;
     parameter J = 7'b0010110;
     parameter JAL1 = 7'b0010111;
     parameter JAL2 = 7'b0011000;
@@ -130,8 +135,10 @@ module controle(
     parameter MFHI = 7'b0100000;
     parameter MFLO = 7'b0100001;
     parameter MULT = 7'b0100010;
+    parameter MULT2 = 7'b1000010;
+    parameter MULT_WAIT = 7'b1000000;
     parameter NO_OPCODE = 7'b0100011;
-    parameter OVERFLOW = 7'b0100100;
+    parameter OVERFLOWS = 7'b0100100;
     parameter RTE = 7'b0100101;
     parameter SB = 7'b0100110; //parte3
     parameter SH = 7'b0100111; //parte3
@@ -157,8 +164,8 @@ module controle(
 
 //inicial begin (reset)
     initial begin
-        counter = 0;
-        state <= FETCH; //sempre realizar reset no começo
+        contador = 0;
+        state <= FETCH;
     end
 
 // always relacionado ao clock
@@ -174,8 +181,7 @@ module controle(
             aluOutControl = 1'b0;
             IRControl = 1'b0; 
             shiftSource = 1'b0;
-            shiftArtSource = 1'b0;
-            RegWrite = 1'b0;
+            shiftArtSource = 1'b0;            
             AControl = 1'b0;
             BControl = 1'b0;
             HILOControl = 1'b0;
@@ -207,8 +213,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -238,8 +243,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -269,8 +273,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b1; // 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -300,9 +303,8 @@ module controle(
                     aluOutControl = 1'b1; //
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b1;
-                    AControl = 1'b1; //se usa esse n precisa do regWrite
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b1; 
                     BControl = 1'b1;
                     HILOControl = 1'b0;
                     muxHI = 1'b0;
@@ -436,8 +438,7 @@ module controle(
                     aluOutControl = 1'b1;//
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -467,8 +468,7 @@ module controle(
                     aluOutControl = 1'b1;//
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -498,8 +498,7 @@ module controle(
                     aluOutControl = 1'b1;//
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -521,7 +520,7 @@ module controle(
                 ADD_AND_SUB: begin
                     memControl = 1'b0; 
                     PCControl = 1'b0;  
-                    regControl = 1'b1;
+                    regControl = 1'b1;//
                     multControl = 1'b0;
                     divControl = 1'b0;
                     memData = 1'b0;
@@ -529,8 +528,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;//
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -547,7 +545,12 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;//
-                    state <= WAIT_FINAL;
+                    if(overflow) begin
+                        state <= OVERFLOWS;
+                    end
+                    else begin
+                    state <= WAIT_FINAL;                        
+                    end
                 end
                 ADDI: begin
                     memControl = 1'b0; 
@@ -560,8 +563,7 @@ module controle(
                     aluOutControl = 1'b1;//
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                      
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -591,8 +593,7 @@ module controle(
                     aluOutControl = 1'b1; //
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -622,8 +623,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -640,7 +640,12 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;//
-                    state <= WAIT_FINAL;
+                    if(opcode == opADDI && overflow == 1'b1) begin
+                        state <= OVERFLOWS;
+                    end
+                    else begin
+                        state <= WAIT_FINAL;
+                    end
                 end
                 JR: begin
                     memControl = 1'b0; 
@@ -653,8 +658,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -684,8 +688,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -715,8 +718,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -746,8 +748,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b1;//
-                    shiftArtSource = 1'b1;//
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b1;//                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -777,8 +778,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b1;//
-                    shiftArtSource = 1'b1;//
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b1;//                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -808,8 +808,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b1;//
-                    shiftArtSource = 1'b1;//
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b1;//                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -839,8 +838,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;//
-                    shiftArtSource = 1'b0;//
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;//                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -870,8 +868,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;//
-                    shiftArtSource = 1'b0;//
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;//                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -901,8 +898,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -932,8 +928,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -963,8 +958,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -994,8 +988,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1025,8 +1018,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1056,8 +1048,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1087,8 +1078,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1118,8 +1108,7 @@ module controle(
                     aluOutControl = 1'b1;//
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1149,8 +1138,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1180,8 +1168,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1211,8 +1198,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1242,8 +1228,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1273,8 +1258,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1306,8 +1290,7 @@ module controle(
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
                             shiftSource = 1'b0;
-                            shiftArtSource = 1'b0;
-                            RegWrite = 1'b0;
+                            shiftArtSource = 1'b0;                            
                             AControl = 1'b0;
                             BControl = 1'b0;
                             HILOControl = 1'b0;
@@ -1336,8 +1319,7 @@ module controle(
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
                             shiftSource = 1'b0;
-                            shiftArtSource = 1'b0;
-                            RegWrite = 1'b0;
+                            shiftArtSource = 1'b0;                            
                             AControl = 1'b0;
                             BControl = 1'b0;
                             HILOControl = 1'b0;
@@ -1366,8 +1348,7 @@ module controle(
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
                             shiftSource = 1'b0;
-                            shiftArtSource = 1'b0;
-                            RegWrite = 1'b0;
+                            shiftArtSource = 1'b0;                            
                             AControl = 1'b0;
                             BControl = 1'b0;
                             HILOControl = 1'b0;
@@ -1399,8 +1380,7 @@ module controle(
                     aluOutControl = 1'b1;//
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1430,8 +1410,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1461,8 +1440,7 @@ module controle(
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
                     shiftSource = 1'b0;
-                    shiftArtSource = 1'b0;
-                    RegWrite = 1'b0;
+                    shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
                     HILOControl = 1'b0;
@@ -1479,7 +1457,7 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    state <= STORE_set;
+                    state <= STORE_SET;
                 end
                 STORE_SET: begin //estado para decidir o load
                     case(opcode)
@@ -1494,8 +1472,7 @@ module controle(
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
                             shiftSource = 1'b0;
-                            shiftArtSource = 1'b0;
-                            RegWrite = 1'b0;
+                            shiftArtSource = 1'b0;                            
                             AControl = 1'b0;
                             BControl = 1'b0;
                             HILOControl = 1'b0;
@@ -1524,8 +1501,7 @@ module controle(
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
                             shiftSource = 1'b0;
-                            shiftArtSource = 1'b0;
-                            RegWrite = 1'b0;
+                            shiftArtSource = 1'b0;                            
                             AControl = 1'b0;
                             BControl = 1'b0;
                             HILOControl = 1'b0;
@@ -1554,8 +1530,7 @@ module controle(
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
                             shiftSource = 1'b0;
-                            shiftArtSource = 1'b0;
-                            RegWrite = 1'b0;
+                            shiftArtSource = 1'b0;                            
                             AControl = 1'b0;
                             BControl = 1'b0;
                             HILOControl = 1'b0;
@@ -1576,22 +1551,903 @@ module controle(
                     endcase
                     state <= WAIT_FINAL;                  
                 end
+                BEQ: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b01;//
+                    muxBControl = 2'b0;// 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b111;//   
+                    dataSource = 4'b0;
+                    state <= BEQ2;
+                end
+                BEQ2: begin
+                    if(equals) begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b1;//  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b001;// 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0; 
+                    end
+                    else begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b0;  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b0; 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0;
+                    end
+                    state <= WAIT_FINAL;
+                end
+                BNE: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b01;//
+                    muxBControl = 2'b0;// 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b111;//   
+                    dataSource = 4'b0;
+                    state <= BNE2;
+                end
+                BNE2: begin
+                    if(equals == 1'b0) begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b1;//  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b001;// 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0; 
+                    end
+                    else begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b0;  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b0; 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0;
+                    end
+                    state <= WAIT_FINAL;
+                end
+                BLE: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b01;//
+                    muxBControl = 2'b0;// 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b111;//   
+                    dataSource = 4'b0;
+                    state <= BLE2;
+                end
+                BLE2: begin
+                    if(greater == 1'b0) begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b1;//  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b001;// 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0; 
+                    end
+                    else begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b0;  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b0; 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0;
+                    end
+                    state <= WAIT_FINAL;
+                end
+                BGT: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b01;//
+                    muxBControl = 2'b0;// 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b111;//   
+                    dataSource = 4'b0;
+                    state <= BGT2;
+                end
+                BGT2: begin
+                    if(greater) begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b1;//  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b001;// 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0; 
+                    end
+                    else begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b0;  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b0; 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0;
+                    end
+                    state <= WAIT_FINAL;
+                end
+                BLM: begin
+                    memControl = 1'b0; //
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b1; //
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b10; // 
+                    muxAControl = 2'b01;//
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   //
+                    dataSource = 4'b0;
+                    state <= BLM_WAIT;
+                end
+                BLM_WAIT: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    state <= BLM2;
+                end
+                BLM2: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b10;//
+                    muxBControl = 2'b0; //
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b111;//   
+                    dataSource = 4'b0;
+                    state <= BLM3;
+                end
+                BLM3: begin
+                    if(lesser) begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b1;//  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b001;// 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0; 
+                    end
+                    else begin
+                        memControl = 1'b0; 
+                        PCControl = 1'b0;  
+                        regControl = 1'b0;
+                        multControl = 1'b0;
+                        divControl = 1'b0;
+                        memData = 1'b0;
+                        epcControl = 1'b0; 
+                        aluOutControl = 1'b0;
+                        IRControl = 1'b0; 
+                        shiftSource = 1'b0;
+                        shiftArtSource = 1'b0;                        
+                        AControl = 1'b0;
+                        BControl = 1'b0;
+                        HILOControl = 1'b0;
+                        muxHI = 1'b0;
+                        muxLO = 1'b0;
+                        slsControl = 2'b0; 
+                        sssControl = 2'b0; 
+                        IorD = 2'b0; 
+                        muxAControl = 2'b0;
+                        muxBControl = 2'b0; 
+                        excptControl = 2'b0; 
+                        regDest = 2'b0; 
+                        PCSource = 3'b0; 
+                        shiftControl = 3'b0;
+                        aluControl = 3'b0;   
+                        dataSource = 4'b0;
+                    end
+                    state <= WAIT_FINAL;
+                end
+                DIV: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b1;//
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    contador = 0; //
+                    state <= DIV_WAIT;
+                end
+                DIV_WAIT: begin 
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;//
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    contador = contador + 1;
+                    if(contator == 33) begin
+                        state <= DIV2;
+                    end
+                    else begin
+                        state <= DIV_WAIT;
+                    end
+                end
+                DIV2: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b1;//
+                    muxHI = 1'b0;//
+                    muxLO = 1'b0;//
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    if(zeroDiv) begin //caso divisão por zero
+                       state <=  DIV0;
+                    end
+                    else begin
+                       state <= WAIT_FINAL;
+                    end
+                end
+                MULT: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b1;//
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    contador = 0; //
+                    state <= MULT_WAIT;
+                end
+                MULT_WAIT: begin 
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;//
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    contador = contador + 1;
+                    if(contator == 33) begin
+                        state <= MULT2;
+                    end
+                    else begin
+                        state <= MULT_WAIT;
+                    end
+                end
+                MULT2: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b1;//
+                    muxHI = 1'b1;//
+                    muxLO = 1'b1;//
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    state <= WAIT_FINAL;
+                end
+                OVERFLOWS: begin //254
+                    memControl = 1'b0; //
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b1; //
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b11; //
+                    muxAControl = 2'b0;//
+                    muxBControl = 2'b01; //
+                    excptControl = 2'b01; //
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b001; //  
+                    dataSource = 4'b0;
+                    state <= EXCEPTION;
+                end
+                NO_OPCODE: begin //253
+                    memControl = 1'b0; //
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b1; //
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b11; //
+                    muxAControl = 2'b0;//
+                    muxBControl = 2'b01; //
+                    excptControl = 2'b00; //
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b001; //  
+                    dataSource = 4'b0;
+                    state <= EXCEPTION;
+                end
+                DIV0: begin //255
+                    memControl = 1'b0; //
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b1; //
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b11; //
+                    muxAControl = 2'b0;//
+                    muxBControl = 2'b01; //
+                    excptControl = 2'b10; //
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b001; //  
+                    dataSource = 4'b0;
+                    state <= EXCEPTION;
+                end
+                EXCEPTION: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b1;//
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    state <= FINAL_EXCEPTION;
+                end
+                FINAL_EXCEPTION: begin
+                    memControl = 1'b0; 
+                    PCControl = 1'b1;//  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b011;// 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    state <= WAIT_FINAL;
+                end
                  
-                WAIT_FINAL: begin
+                WAIT_FINAL: begin //setta tudo pra leitura pra começar o fetch
+                    memControl = 1'b0; 
+                    PCControl = 1'b0; 
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 2'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
                     state <= FETCH;
                 end
-
-
-            endcase
-                 
+            endcase                 
         end
     end
-//EXCEÇÕES
-/* if (estado) begin
-    atualiza estados de saída 
-    
-    ESTADO: begin
-            atualiza estados 
-*/
 
 endmodule

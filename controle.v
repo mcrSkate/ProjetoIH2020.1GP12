@@ -52,7 +52,7 @@ module controle(
 
 //parameters --mudar tamanho necessário depois
     reg [6:0] state;
-    integer counter;
+    integer contador;
 
 
 //opcodes --códigos em hexadecimal (especificação projeto)
@@ -164,7 +164,7 @@ module controle(
 
 //inicial begin (reset)
     initial begin
-        counter = 0;
+        contador = 0;
         state <= FETCH;
     end
 
@@ -640,7 +640,7 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;//
-                    if(opcode == opADDI && overflow = 1'b1) begin
+                    if(opcode == opADDI && overflow == 1'b1) begin
                         state <= OVERFLOWS;
                     end
                     else begin
@@ -1609,7 +1609,7 @@ module controle(
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0 
+                        dataSource = 4'b0; 
                     end
                     else begin
                         memControl = 1'b0; 
@@ -1638,7 +1638,7 @@ module controle(
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0
+                        dataSource = 4'b0;
                     end
                     state <= WAIT_FINAL;
                 end
@@ -1700,7 +1700,7 @@ module controle(
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0 
+                        dataSource = 4'b0; 
                     end
                     else begin
                         memControl = 1'b0; 
@@ -1729,7 +1729,7 @@ module controle(
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0
+                        dataSource = 4'b0;
                     end
                     state <= WAIT_FINAL;
                 end
@@ -1791,7 +1791,7 @@ module controle(
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0 
+                        dataSource = 4'b0; 
                     end
                     else begin
                         memControl = 1'b0; 
@@ -1820,7 +1820,7 @@ module controle(
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0
+                        dataSource = 4'b0;
                     end
                     state <= WAIT_FINAL;
                 end
@@ -1882,7 +1882,7 @@ module controle(
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0 
+                        dataSource = 4'b0; 
                     end
                     else begin
                         memControl = 1'b0; 
@@ -1911,7 +1911,7 @@ module controle(
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0
+                        dataSource = 4'b0;
                     end
                     state <= WAIT_FINAL;
                 end
@@ -2033,7 +2033,7 @@ module controle(
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0 
+                        dataSource = 4'b0; 
                     end
                     else begin
                         memControl = 1'b0; 
@@ -2062,7 +2062,7 @@ module controle(
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
-                        dataSource = 4'b0
+                        dataSource = 4'b0;
                     end
                     state <= WAIT_FINAL;
                 end
@@ -2094,7 +2094,7 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    contador = 0 //
+                    contador = 0; //
                     state <= DIV_WAIT;
                 end
                 DIV_WAIT: begin 
@@ -2126,7 +2126,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contator == 33) begin
+                    if(contador == 33) begin
                         state <= DIV2;
                     end
                     else begin
@@ -2196,7 +2196,7 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    contador = 0 //
+                    contador = 0; //
                     state <= MULT_WAIT;
                 end
                 MULT_WAIT: begin 
@@ -2228,7 +2228,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contator == 33) begin
+                    if(contador == 33) begin
                         state <= MULT2;
                     end
                     else begin

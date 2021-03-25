@@ -4,7 +4,7 @@ module concatena_pc (
     output reg [31:0] concatena_pc_out
 );
 always @(*) begin
-    concatena_pc_out <= {pc_out,shift_left_2_out};
+    assign concatena_pc_out = {pc_out,shift_left_2_out};
 end
     
 endmodule

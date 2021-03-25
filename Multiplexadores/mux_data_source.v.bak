@@ -1,4 +1,4 @@
-module mux_data_source (
+module mux_data_Source (
     input wire [3:0] mux_dataSource_control,
     input wire [31:0] AluOut_out,
     input wire [31:0] SLS_out,

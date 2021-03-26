@@ -1,6 +1,6 @@
 module mux_excpt (
     input wire [1:0] excpt_Control,
-    output reg [31:0] mux_excpt_out
+    output reg [1:0] mux_excpt_out
 );
 
 always @(*) begin

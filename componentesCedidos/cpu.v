@@ -20,19 +20,19 @@ module cpu(
 	CLOCK,
 	RESET,
 	Instr15_0,
-	SYNTHESIZED_WIRE_9,
-	SYNTHESIZED_WIRE_12,
-	SYNTHESIZED_WIRE_93,
-	SYNTHESIZED_WIRE_94,
-	SYNTHESIZED_WIRE_43,
-	SYNTHESIZED_WIRE_44,
-	SYNTHESIZED_WIRE_66,
-	SYNTHESIZED_WIRE_75,
-	SYNTHESIZED_WIRE_76,
-	SYNTHESIZED_WIRE_83,
-	SYNTHESIZED_WIRE_85,
-	SYNTHESIZED_WIRE_89,
-	SYNTHESIZED_WIRE_40	
+	HI_in,
+	Mem_in,
+	Instr20_16,
+	Instr25_21,
+	Write_data,
+	Write_reg,
+	EPC_out,
+	muxA_out,
+	muxB_out,
+	Instr31_26,
+	LO_in,
+	PC_in,
+	Reg_write	
 );
 
 
@@ -50,10 +50,10 @@ wire	SYNTHESIZED_WIRE_4;
 wire	[31:0] SYNTHESIZED_WIRE_5;
 wire	SYNTHESIZED_WIRE_6;
 wire	SYNTHESIZED_WIRE_91;
-output wire	[31:0] SYNTHESIZED_WIRE_9;
+output wire	[31:0] HI_in;
 wire	SYNTHESIZED_WIRE_10;
 wire	[31:0] SYNTHESIZED_WIRE_11;
-output wire	[31:0] SYNTHESIZED_WIRE_12;
+output wire	[31:0] Mem_in;
 wire	[31:0] SYNTHESIZED_WIRE_92;
 wire	[1:0] SYNTHESIZED_WIRE_14;
 wire	[1:0] SYNTHESIZED_WIRE_16;
@@ -62,8 +62,8 @@ wire	[4:0] SYNTHESIZED_WIRE_18;
 wire	[2:0] SYNTHESIZED_WIRE_19;
 wire	SYNTHESIZED_WIRE_20;
 wire	SYNTHESIZED_WIRE_22;
-output wire	[4:0] SYNTHESIZED_WIRE_93;
-output wire	[4:0] SYNTHESIZED_WIRE_94;
+output wire	[4:0] Instr20_16;
+output wire	[4:0] Instr25_21;
 wire	[25:0] SYNTHESIZED_WIRE_26;
 wire	SYNTHESIZED_WIRE_27;
 wire	[31:0] SYNTHESIZED_WIRE_95;
@@ -76,9 +76,9 @@ wire	[31:0] SYNTHESIZED_WIRE_34;
 wire	[1:0] SYNTHESIZED_WIRE_35;
 wire	SYNTHESIZED_WIRE_37;
 wire	SYNTHESIZED_WIRE_39;
-output wire	SYNTHESIZED_WIRE_40;
-output wire	[31:0] SYNTHESIZED_WIRE_43;
-output wire	[4:0] SYNTHESIZED_WIRE_44;
+output wire	Reg_write;
+output wire	[31:0] Write_data;
+output wire	[4:0] Write_reg;
 wire	[31:0] SYNTHESIZED_WIRE_46;
 wire	[31:0] SYNTHESIZED_WIRE_47;
 wire	[31:0] SYNTHESIZED_WIRE_48;
@@ -95,23 +95,23 @@ wire	SYNTHESIZED_WIRE_61;
 wire	[31:0] SYNTHESIZED_WIRE_62;
 wire	[31:0] SYNTHESIZED_WIRE_63;
 wire	[31:0] SYNTHESIZED_WIRE_65;
-output wire	[31:0] SYNTHESIZED_WIRE_66;
+output wire	[31:0] EPC_out;
 wire	[2:0] SYNTHESIZED_WIRE_68;
 wire	[1:0] SYNTHESIZED_WIRE_70;
 wire	[31:0] SYNTHESIZED_WIRE_71;
 wire	[1:0] SYNTHESIZED_WIRE_74;
-output wire	[31:0] SYNTHESIZED_WIRE_75;
-output wire	[31:0] SYNTHESIZED_WIRE_76;
+output wire	[31:0] muxA_out;
+output wire	[31:0] muxB_out;
 wire	[2:0] SYNTHESIZED_WIRE_77;
 wire	SYNTHESIZED_WIRE_78;
 wire	SYNTHESIZED_WIRE_79;
 wire	SYNTHESIZED_WIRE_81;
 wire	SYNTHESIZED_WIRE_82;
-output wire	[5:0] SYNTHESIZED_WIRE_83;
-output wire	[31:0] SYNTHESIZED_WIRE_85;
+output wire	[5:0] Instr31_26;
+output wire	[31:0] LO_in;
 wire	SYNTHESIZED_WIRE_86;
 wire	SYNTHESIZED_WIRE_88;
-output wire	[31:0] SYNTHESIZED_WIRE_89;
+output wire	[31:0] PC_in;
 
 
 
@@ -146,14 +146,14 @@ Registrador	b2v_EPC(
 	.Reset(RESET),
 	.Load(SYNTHESIZED_WIRE_6),
 	.Entrada(SYNTHESIZED_WIRE_90),
-	.Saida(SYNTHESIZED_WIRE_66));
+	.Saida(EPC_out));
 
 
 Registrador	b2v_HI(
 	.Clk(CLOCK),
 	.Reset(RESET),
 	.Load(SYNTHESIZED_WIRE_91),
-	.Entrada(SYNTHESIZED_WIRE_9),
+	.Entrada(HI_in),
 	.Saida(SYNTHESIZED_WIRE_46));
 
 
@@ -161,7 +161,7 @@ Memoria	b2v_inst1(
 	.Clock(CLOCK),
 	.Wr(SYNTHESIZED_WIRE_10),
 	.Address(SYNTHESIZED_WIRE_11),
-	.Datain(SYNTHESIZED_WIRE_12),
+	.Datain(Mem_in),
 	.Dataout(SYNTHESIZED_WIRE_95));
 
 
@@ -169,7 +169,7 @@ set_store_size	b2v_inst10(
 	.b_out(Saida_b),
 	.memory_data_register_out(SYNTHESIZED_WIRE_92),
 	.set_store_size_control(SYNTHESIZED_WIRE_14),
-	.set_store_size_out(SYNTHESIZED_WIRE_12));
+	.set_store_size_out(Mem_in));
 
 
 set_load_size	b2v_inst11(
@@ -210,8 +210,8 @@ div	b2v_inst15(
 
 inst_concatener	b2v_inst18(
 	.Instr15_0(Instr15_0),
-	.Instr20_16(SYNTHESIZED_WIRE_93),
-	.Instr25_21(SYNTHESIZED_WIRE_94),
+	.Instr20_16(Instr20_16),
+	.Instr25_21(Instr25_21),
 	.inst_concatener_out(SYNTHESIZED_WIRE_26));
 
 
@@ -226,9 +226,9 @@ Instr_Reg	b2v_inst2(
 	.Load_ir(SYNTHESIZED_WIRE_27),
 	.Entrada(SYNTHESIZED_WIRE_95),
 	.Instr15_0(Instr15_0),
-	.Instr20_16(SYNTHESIZED_WIRE_93),
-	.Instr25_21(SYNTHESIZED_WIRE_94),
-	.Instr31_26(SYNTHESIZED_WIRE_83));
+	.Instr20_16(Instr20_16),
+	.Instr25_21(Instr25_21),
+	.Instr31_26(Instr31_26));
 
 
 concatena_pc	b2v_inst20(
@@ -283,11 +283,11 @@ mux_shiftART	b2v_inst28(
 Banco_reg	b2v_inst3(
 	.Clk(CLOCK),
 	.Reset(RESET),
-	.RegWrite(SYNTHESIZED_WIRE_40),
-	.ReadReg1(SYNTHESIZED_WIRE_94),
-	.ReadReg2(SYNTHESIZED_WIRE_93),
-	.WriteData(SYNTHESIZED_WIRE_43),
-	.WriteReg(SYNTHESIZED_WIRE_44),
+	.RegWrite(Reg_write),
+	.ReadReg1(Instr25_21),
+	.ReadReg2(Instr20_16),
+	.WriteData(Write_data),
+	.WriteReg(Write_reg),
 	.ReadData1(SYNTHESIZED_WIRE_1),
 	.ReadData2(SYNTHESIZED_WIRE_5));
 
@@ -304,7 +304,7 @@ mux_data_source	b2v_inst30(
 	.shiftReg_out(SYNTHESIZED_WIRE_52),
 	.signalExtend_out(SYNTHESIZED_WIRE_96),
 	.SLS_out(SYNTHESIZED_WIRE_54),
-	.mux_dataSource_out(SYNTHESIZED_WIRE_43));
+	.mux_dataSource_out(Write_data));
 
 
 mux_a	b2v_inst31(
@@ -312,31 +312,31 @@ mux_a	b2v_inst31(
 	.mux_a_control(SYNTHESIZED_WIRE_56),
 	.pc_out(Saida),
 	.regA_out(SYNTHESIZED_WIRE_57),
-	.mux_a_out(SYNTHESIZED_WIRE_75));
+	.mux_a_out(muxA_out));
 
 
 mux_hi	b2v_inst33(
 	.mux_hi_control(SYNTHESIZED_WIRE_58),
 	.hi_div_out(SYNTHESIZED_WIRE_59),
 	.hi_mult_out(SYNTHESIZED_WIRE_60),
-	.mux_hi_out(SYNTHESIZED_WIRE_9));
+	.mux_hi_out(HI_in));
 
 
 mux_lo	b2v_inst34(
 	.mux_lo_control(SYNTHESIZED_WIRE_61),
 	.lo_div_out(SYNTHESIZED_WIRE_62),
 	.lo_mult_out(SYNTHESIZED_WIRE_63),
-	.mux_lo_out(SYNTHESIZED_WIRE_85));
+	.mux_lo_out(LO_in));
 
 
 mux_pc_source	b2v_inst35(
 	.AluOut_out(SYNTHESIZED_WIRE_98),
 	.concatena_pc_out(SYNTHESIZED_WIRE_65),
-	.epc_out(SYNTHESIZED_WIRE_66),
+	.epc_out(EPC_out),
 	.mdr_out(SYNTHESIZED_WIRE_92),
 	.mux_pc_source_control(SYNTHESIZED_WIRE_68),
 	.ULA_out(SYNTHESIZED_WIRE_90),
-	.mux_pc_source_out(SYNTHESIZED_WIRE_89));
+	.mux_pc_source_out(PC_in));
 
 
 mux_b	b2v_inst36(
@@ -344,14 +344,14 @@ mux_b	b2v_inst36(
 	.regB_out(Saida_b),
 	.shift_left_2_mux_out(SYNTHESIZED_WIRE_71),
 	.singExtend16_32_out(SYNTHESIZED_WIRE_96),
-	.mux_b_out(SYNTHESIZED_WIRE_76));
+	.mux_b_out(muxB_out));
 
 
 mux_regDest	b2v_inst37(
 	.inst15_11_out(Instr15_0[15:11]),
-	.inst20_16_out(SYNTHESIZED_WIRE_93),
+	.inst20_16_out(Instr20_16),
 	.mux_regDest_control(SYNTHESIZED_WIRE_74),
-	.mux_regDest_out(SYNTHESIZED_WIRE_44));
+	.mux_regDest_out(Write_reg));
 
 
 sign_extend_16_32	b2v_inst38(
@@ -360,8 +360,8 @@ sign_extend_16_32	b2v_inst38(
 
 
 Ula32	b2v_inst6(
-	.A(SYNTHESIZED_WIRE_75),
-	.B(SYNTHESIZED_WIRE_76),
+	.A(muxA_out),
+	.B(muxB_out),
 	.Seletor(SYNTHESIZED_WIRE_77),
 	.Overflow(SYNTHESIZED_WIRE_81),
 	
@@ -381,10 +381,10 @@ controle	b2v_inst7(
 	.overflow(SYNTHESIZED_WIRE_81),
 	.zeroDiv(SYNTHESIZED_WIRE_82),
 	.funct(Instr15_0[5:0]),
-	.opcode(SYNTHESIZED_WIRE_83),
+	.opcode(Instr31_26),
 	.memControl(SYNTHESIZED_WIRE_10),
 	.PCControl(SYNTHESIZED_WIRE_88),
-	.regControl(SYNTHESIZED_WIRE_40),
+	.regControl(Reg_write),
 	.multControl(SYNTHESIZED_WIRE_20),
 	.divControl(SYNTHESIZED_WIRE_22),
 	.memData(SYNTHESIZED_WIRE_86),
@@ -516,7 +516,7 @@ Registrador	b2v_LO(
 	.Clk(CLOCK),
 	.Reset(RESET),
 	.Load(SYNTHESIZED_WIRE_91),
-	.Entrada(SYNTHESIZED_WIRE_85),
+	.Entrada(LO_in),
 	.Saida(SYNTHESIZED_WIRE_47));
 
 
@@ -532,7 +532,7 @@ Registrador	b2v_PC(
 	.Clk(CLOCK),
 	.Reset(RESET),
 	.Load(SYNTHESIZED_WIRE_88),
-	.Entrada(SYNTHESIZED_WIRE_89),
+	.Entrada(PC_in),
 	.Saida(Saida));
 
 

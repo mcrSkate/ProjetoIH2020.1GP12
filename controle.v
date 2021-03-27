@@ -40,8 +40,8 @@ module controle(
     output reg[1:0] muxAControl,
     output reg[1:0] muxBControl, 
     output reg[1:0] excptControl, //execeções 
-    output reg[1:0] regDest, //registrador de destino 
-    
+
+    output reg[2:0] regDest, //registrador de destino 
     output reg[2:0] PCSource, 
     output reg[2:0] shiftControl, // registrador de deslocamento
     output reg[2:0] aluControl, // checar como fica a ula   
@@ -194,7 +194,7 @@ module controle(
             muxAControl = 2'b0;
             muxBControl = 2'b0; 
             excptControl = 2'b0; 
-            regDest = 2'b11; // 
+            regDest = 3'b011; // 
             PCSource = 3'b0; 
             shiftControl = 3'b0;
             aluControl = 3'b0;   
@@ -226,7 +226,7 @@ module controle(
                     muxAControl = 2'b0; //
                     muxBControl = 2'b01; // 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; // 
                     shiftControl = 3'b0;
                     aluControl = 3'b001; //   
@@ -256,7 +256,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; //
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -286,7 +286,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b00; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -316,7 +316,7 @@ module controle(
                     muxAControl = 2'b0; //
                     muxBControl = 2'b11; // 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001; //   
@@ -451,7 +451,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0; //
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b00; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001;//   
@@ -481,7 +481,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0; //
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b011; //   
@@ -511,7 +511,7 @@ module controle(
                     muxAControl = 2'b01; //
                     muxBControl = 2'b0; //
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b010;//   
@@ -541,7 +541,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b01;// 
+                    regDest = 3'b001;// 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -576,7 +576,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b10;// 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001;//   
@@ -606,7 +606,7 @@ module controle(
                     muxAControl = 2'b01; //
                     muxBControl = 2'b10; //
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001; //   
@@ -636,7 +636,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; //
+                    regDest = 3'b0; //
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -671,7 +671,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; //
                     shiftControl = 3'b0;
                     aluControl = 3'b0; //  
@@ -701,7 +701,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b01;// 
+                    regDest = 3'b001;// 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -731,7 +731,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b01;// 
+                    regDest = 3'b001;// 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -761,7 +761,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b1;
                     aluControl = 3'b0;   
@@ -791,7 +791,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b1;
                     aluControl = 3'b0;   
@@ -821,7 +821,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b1;//
                     aluControl = 3'b0;   
@@ -851,7 +851,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b1;//
                     aluControl = 3'b0;   
@@ -881,7 +881,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b1;//
                     aluControl = 3'b0;   
@@ -913,7 +913,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b010;//
                             aluControl = 3'b0;   
@@ -942,7 +942,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b100;//
                             aluControl = 3'b0;   
@@ -971,7 +971,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b011;//
                             aluControl = 3'b0;   
@@ -1000,7 +1000,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b010;//
                             aluControl = 3'b0;   
@@ -1029,7 +1029,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b100;//
                             aluControl = 3'b0;   
@@ -1061,7 +1061,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b01;// 
+                    regDest = 3'b001;// 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1091,7 +1091,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b00; //
                     excptControl = 2'b0; 
-                    regDest = 2'b01;// 
+                    regDest = 3'b001;// 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b111; //  
@@ -1121,7 +1121,7 @@ module controle(
                     muxAControl = 2'b0; //
                     muxBControl = 2'b01; // 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; //
                     shiftControl = 3'b0;
                     aluControl = 3'b010;//   
@@ -1151,7 +1151,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b100; //
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1181,7 +1181,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; // 
+                    regDest = 3'b0; // 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1211,7 +1211,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b010;// 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1241,7 +1241,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b10;// 
                     excptControl = 2'b0; 
-                    regDest = 2'b0;// 
+                    regDest = 3'b0;// 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b111;//   
@@ -1271,7 +1271,7 @@ module controle(
                     muxAControl = 2'b0;//
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0; //  
@@ -1301,7 +1301,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b10;// 
+                    regDest = 3'b010;// 
                     PCSource = 3'b010;// 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1331,7 +1331,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b01;// 
+                    regDest = 3'b100;// 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1361,7 +1361,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; // 
+                    regDest = 3'b0; // 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1391,7 +1391,7 @@ module controle(
                     muxAControl = 2'b01;
                     muxBControl = 2'b10; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001;//   
@@ -1421,7 +1421,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1453,7 +1453,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; //
+                            regDest = 3'b0; //
                             PCSource = 3'b0; 
                             shiftControl = 3'b0;
                             aluControl = 3'b0;   
@@ -1482,7 +1482,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; //
+                            regDest = 3'b0; //
                             PCSource = 3'b0; 
                             shiftControl = 3'b0;
                             aluControl = 3'b0;   
@@ -1511,7 +1511,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; //
+                            regDest = 3'b0; //
                             PCSource = 3'b0; 
                             shiftControl = 3'b0;
                             aluControl = 3'b0;   
@@ -1543,7 +1543,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b10; //
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001; //  
@@ -1573,7 +1573,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1603,7 +1603,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -1635,7 +1635,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b0;
                             aluControl = 3'b0;   
@@ -1664,7 +1664,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b0;
                             aluControl = 3'b0;   
@@ -1693,7 +1693,7 @@ module controle(
                             muxAControl = 2'b0;
                             muxBControl = 2'b0; 
                             excptControl = 2'b0; 
-                            regDest = 2'b0; 
+                            regDest = 3'b0; 
                             PCSource = 3'b0; 
                             shiftControl = 3'b0;
                             aluControl = 3'b0;   
@@ -1725,7 +1725,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0;// 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b111;//   
@@ -1756,7 +1756,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -1785,7 +1785,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -1816,7 +1816,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0;// 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b111;//   
@@ -1847,7 +1847,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -1876,7 +1876,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -1907,7 +1907,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0;// 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b111;//   
@@ -1938,7 +1938,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -1967,7 +1967,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -1998,7 +1998,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0;// 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b111;//   
@@ -2029,7 +2029,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -2058,7 +2058,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -2089,7 +2089,7 @@ module controle(
                     muxAControl = 2'b01;//
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   //
@@ -2119,7 +2119,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2149,7 +2149,7 @@ module controle(
                     muxAControl = 2'b10;//
                     muxBControl = 2'b0; //
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b111;//   
@@ -2180,7 +2180,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b001;// 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -2209,7 +2209,7 @@ module controle(
                         muxAControl = 2'b0;
                         muxBControl = 2'b0; 
                         excptControl = 2'b0; 
-                        regDest = 2'b0; 
+                        regDest = 3'b0; 
                         PCSource = 3'b0; 
                         shiftControl = 3'b0;
                         aluControl = 3'b0;   
@@ -2240,7 +2240,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2271,7 +2271,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2307,7 +2307,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2342,7 +2342,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2373,7 +2373,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2409,7 +2409,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2439,7 +2439,7 @@ module controle(
                     muxAControl = 2'b0;//
                     muxBControl = 2'b01; //
                     excptControl = 2'b01; //
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001; //  
@@ -2469,7 +2469,7 @@ module controle(
                     muxAControl = 2'b0;//
                     muxBControl = 2'b01; //
                     excptControl = 2'b00; //
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001; //  
@@ -2499,7 +2499,7 @@ module controle(
                     muxAControl = 2'b0;//
                     muxBControl = 2'b01; //
                     excptControl = 2'b10; //
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b001; //  
@@ -2529,7 +2529,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2559,7 +2559,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b011;// 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
@@ -2590,7 +2590,7 @@ module controle(
                     muxAControl = 2'b0;
                     muxBControl = 2'b0; 
                     excptControl = 2'b0; 
-                    regDest = 2'b0; 
+                    regDest = 3'b0; 
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   

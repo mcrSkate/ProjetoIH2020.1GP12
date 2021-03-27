@@ -1588,7 +1588,7 @@ module controle(
                     regControl = 1'b0;
                     multControl = 1'b0;
                     divControl = 1'b0;
-                    memData = 1'b0;
+                    memData = 1'b1;//*
                     epcControl = 1'b0; 
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
@@ -1618,7 +1618,7 @@ module controle(
                     regControl = 1'b0;
                     multControl = 1'b0;
                     divControl = 1'b0;
-                    memData = 1'b0;
+                    memData = 1'b1;//*
                     epcControl = 1'b0; 
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
@@ -1648,7 +1648,7 @@ module controle(
                     regControl = 1'b0;
                     multControl = 1'b0;
                     divControl = 1'b0;
-                    memData = 1'b1; //
+                    memData = 1'b1;//
                     epcControl = 1'b0; 
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
@@ -1680,7 +1680,7 @@ module controle(
                             regControl = 1'b0;
                             multControl = 1'b0;
                             divControl = 1'b0;
-                            memData = 1'b0;
+                            memData = 1'b1;//*
                             epcControl = 1'b0; 
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
@@ -1709,7 +1709,7 @@ module controle(
                             regControl = 1'b0;
                             multControl = 1'b0;
                             divControl = 1'b0;
-                            memData = 1'b0;
+                            memData = 1'b1;//*
                             epcControl = 1'b0; 
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 
@@ -1738,7 +1738,7 @@ module controle(
                             regControl = 1'b0;
                             multControl = 1'b0;
                             divControl = 1'b0;
-                            memData = 1'b0;
+                            memData = 1'b1;//*
                             epcControl = 1'b0; 
                             aluOutControl = 1'b0;
                             IRControl = 1'b0; 

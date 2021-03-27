@@ -46,8 +46,8 @@ module controle(
     output reg[2:0] shiftControl, // registrador de deslocamento
     output reg[2:0] aluControl, // checar como fica a ula   
             
-    output reg[3:0] dataSource // writeData   
-    output reg [6:0] state; 
+    output reg[3:0] dataSource, // writeData   
+    output reg [6:0] state 
 );
 
 

@@ -2126,7 +2126,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contador == 33) begin
+                    if(contador == 32) begin
                         state <= DIV2;
                     end
                     else begin
@@ -2228,7 +2228,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contador == 33) begin
+                    if(contador == 32) begin
                         state <= MULT2;
                     end
                     else begin

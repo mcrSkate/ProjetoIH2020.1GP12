@@ -19,7 +19,7 @@ module controle(
     output reg regControl, //banco de registradores
     output reg multControl, 
     output reg divControl,
-    output reg memData,
+    output reg memData, //mdr
     output reg epcControl, 
     output reg aluOutControl,
     output reg IRControl, //registrador de instruções
@@ -129,6 +129,7 @@ module controle(
     parameter JAL2 = 7'b0011000;
     parameter JR = 7'b0011001;
     parameter LOAD_WAIT = 7'b0011100;
+    parameter LOAD_WAIT2 = 7'b1011100;
     parameter LOAD_SET = 7'b0111111; 
     parameter LUI = 7'b0011101;
     parameter LW_LH_LB = 7'b0011111;
@@ -154,6 +155,7 @@ module controle(
     parameter STORE_PC = 7'b0110000; //armazena em pc
     parameter STORE_SET = 7'b011110;
     parameter STORE_WAIT = 7'b0110001;
+    parameter STORE_WAIT2 = 7'b1011101;
     parameter SUB = 7'b0110010;
     parameter SW = 7'b0110011; //parte3
     parameter SW_SH_SB1 = 7'b0110100;
@@ -1369,12 +1371,12 @@ module controle(
                     state <= WAIT_FINAL;
                 end
                 LW_LH_LB: begin
-                    memControl = 1'b0;// 
+                    memControl = 1'b0; // 
                     PCControl = 1'b0;  
                     regControl = 1'b0;
                     multControl = 1'b0;
                     divControl = 1'b0;
-                    memData = 1'b1;//
+                    memData = 1'b0; //
                     epcControl = 1'b0; 
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
@@ -1388,8 +1390,8 @@ module controle(
                     slsControl = 2'b0; 
                     sssControl = 2'b0; 
                     IorD = 2'b10; //
-                    muxAControl = 2'b01;
-                    muxBControl = 2'b10; 
+                    muxAControl = 2'b01;//
+                    muxBControl = 2'b10; //
                     excptControl = 2'b0; 
                     regDest = 3'b0; 
                     PCSource = 3'b0; 
@@ -1405,6 +1407,36 @@ module controle(
                     multControl = 1'b0;
                     divControl = 1'b0;
                     memData = 1'b0;
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 3'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
+                    state <= LOAD_WAIT2;
+                end
+                LOAD_WAIT2: begin //wait2 +mdr
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b1;//
                     epcControl = 1'b0; 
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
@@ -1520,7 +1552,7 @@ module controle(
                     endcase
                     state <= WAIT_FINAL;                  
                 end
-                SW_SH_SB1: begin
+                SW_SH_SB1: begin //op ula ->aluout
                     memControl = 1'b0; 
                     PCControl = 1'b0;  
                     regControl = 1'b0;
@@ -1550,13 +1582,13 @@ module controle(
                     dataSource = 4'b0;
                     state <= SW_SH_SB2;
                 end
-                SW_SH_SB2: begin
+                SW_SH_SB2: begin //manda pra memória
                     memControl = 1'b0;// 
                     PCControl = 1'b0;  
                     regControl = 1'b0;
                     multControl = 1'b0;
                     divControl = 1'b0;
-                    memData = 1'b1;//
+                    memData = 1'b0;
                     epcControl = 1'b0; 
                     aluOutControl = 1'b0;
                     IRControl = 1'b0; 
@@ -1580,7 +1612,7 @@ module controle(
                     dataSource = 4'b0;
                     state <= STORE_WAIT;
                 end
-                STORE_WAIT: begin
+                STORE_WAIT: begin //wait para a memoria
                     memControl = 1'b0; 
                     PCControl = 1'b0;  
                     regControl = 1'b0;
@@ -1608,9 +1640,39 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
+                    state <= STORE_WAIT2;
+                end
+                STORE_WAIT2: begin //wait2 +mdr
+                    memControl = 1'b0; 
+                    PCControl = 1'b0;  
+                    regControl = 1'b0;
+                    multControl = 1'b0;
+                    divControl = 1'b0;
+                    memData = 1'b1; //
+                    epcControl = 1'b0; 
+                    aluOutControl = 1'b0;
+                    IRControl = 1'b0; 
+                    shiftSource = 1'b0;
+                    shiftArtSource = 1'b0;                    
+                    AControl = 1'b0;
+                    BControl = 1'b0;
+                    HILOControl = 1'b0;
+                    muxHI = 1'b0;
+                    muxLO = 1'b0;
+                    slsControl = 2'b0; 
+                    sssControl = 2'b0; 
+                    IorD = 2'b0; 
+                    muxAControl = 2'b0;
+                    muxBControl = 2'b0; 
+                    excptControl = 2'b0; 
+                    regDest = 3'b0; 
+                    PCSource = 3'b0; 
+                    shiftControl = 3'b0;
+                    aluControl = 3'b0;   
+                    dataSource = 4'b0;
                     state <= STORE_SET;
                 end
-                STORE_SET: begin //estado para decidir o load
+                STORE_SET: begin //estado para decidir o store
                     case(opcode)
                         opSB: begin //SB
                             memControl = 1'b1;// 

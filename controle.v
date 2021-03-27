@@ -353,6 +353,15 @@ module controle(
                                 fSLL: begin
                                     state <= SLL;
                                 end
+                                fSRA: begin
+                                    state <= SRA;
+                                end
+                                fSRAV: begin
+                                    state <= SRAV;
+                                end
+                                fSRL: begin
+                                    state <= SRL;
+                                end
                                 fSLLV: begin
                                     state <= SLLV;
                                 end

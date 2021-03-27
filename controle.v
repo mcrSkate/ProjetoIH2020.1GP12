@@ -949,7 +949,7 @@ module controle(
                 end
                 BREAK: begin
                     memControl = 1'b0; 
-                    PCControl = 1'b0; //
+                    PCControl = 1'b1; //
                     regControl = 1'b0;
                     multControl = 1'b0;
                     divControl = 1'b0;

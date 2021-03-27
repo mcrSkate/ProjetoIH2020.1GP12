@@ -360,7 +360,7 @@ module controle(
                                     state <= SRAV;
                                 end
                                 fSRL: begin
-                                    state <= SRL;
+                                    state <=SRL;
                                 end
                                 fSLLV: begin
                                     state <= SLLV;
@@ -1319,7 +1319,7 @@ module controle(
                     dataSource = 4'b0;//
                     state <= WAIT_FINAL;
                 end
-                XCHG1: begin
+                XCHG2: begin
                     memControl = 1'b0; 
                     PCControl = 1'b0;  
                     regControl = 1'b1;//
@@ -1346,10 +1346,10 @@ module controle(
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
-                    dataSource = 4'b1001;//
-                    state <= XCHG2;
+                    dataSource = 4'b1001;//                    
+                    state <= WAIT_FINAL;
                 end
-                XCHG2: begin
+                XCHG1: begin
                     memControl = 1'b0; 
                     PCControl = 1'b0;  
                     regControl = 1'b1;//
@@ -1377,7 +1377,7 @@ module controle(
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
                     dataSource = 4'b1000;//
-                    state <= WAIT_FINAL;
+                    state <= XCHG2;
                 end
                 LW_LH_LB: begin
                     memControl = 1'b0; // 

@@ -1337,7 +1337,7 @@ module controle(
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
-                    dataSource = 4'b1000;//
+                    dataSource = 4'b1001;//
                     state <= XCHG2;
                 end
                 XCHG2: begin
@@ -1367,7 +1367,7 @@ module controle(
                     PCSource = 3'b0; 
                     shiftControl = 3'b0;
                     aluControl = 3'b0;   
-                    dataSource = 4'b1001;//
+                    dataSource = 4'b1000;//
                     state <= WAIT_FINAL;
                 end
                 LW_LH_LB: begin
@@ -2339,7 +2339,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contador == 32) begin
+                    if(contador == 33) begin
                         state <= DIV2;
                     end
                     else begin
@@ -2441,7 +2441,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contador == 32) begin
+                    if(contador == 33) begin
                         state <= MULT2;
                     end
                     else begin

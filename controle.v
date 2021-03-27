@@ -142,6 +142,7 @@ module controle(
     parameter RTE = 7'b0100101;
     parameter SB = 7'b0100110; //parte3
     parameter SH = 7'b0100111; //parte3
+    parameter SHIFT_WAIT = 7'b1010111;
     parameter SLL = 7'b0101000;
     parameter SLLV = 7'b0101001;
     parameter SLT = 7'b0101010;
@@ -762,10 +763,10 @@ module controle(
                     excptControl = 2'b0; 
                     regDest = 2'b0; 
                     PCSource = 3'b0; 
-                    shiftControl = 3'b010;//
+                    shiftControl = 3'b1;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    state <= SREG_OUT;
+                    state <= SHIFT_WAIT;
                 end
                 SRA: begin
                     memControl = 1'b0; 
@@ -792,10 +793,10 @@ module controle(
                     excptControl = 2'b0; 
                     regDest = 2'b0; 
                     PCSource = 3'b0; 
-                    shiftControl = 3'b100;//
+                    shiftControl = 3'b1;
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    state <= SREG_OUT;
+                    state <= SHIFT_WAIT;
                 end
                 SRL: begin
                     memControl = 1'b0; 
@@ -822,10 +823,10 @@ module controle(
                     excptControl = 2'b0; 
                     regDest = 2'b0; 
                     PCSource = 3'b0; 
-                    shiftControl = 3'b011;//
+                    shiftControl = 3'b1;//
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    state <= SREG_OUT;
+                    state <= SHIFT_WAIT;
                 end
                 SLLV: begin 
                     memControl = 1'b0; 
@@ -852,10 +853,10 @@ module controle(
                     excptControl = 2'b0; 
                     regDest = 2'b0; 
                     PCSource = 3'b0; 
-                    shiftControl = 3'b010;//
+                    shiftControl = 3'b1;//
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    state <= SREG_OUT;
+                    state <= SHIFT_WAIT;
                 end
                 SRAV: begin
                     memControl = 1'b0; 
@@ -882,10 +883,160 @@ module controle(
                     excptControl = 2'b0; 
                     regDest = 2'b0; 
                     PCSource = 3'b0; 
-                    shiftControl = 3'b100;//
+                    shiftControl = 3'b1;//
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
-                    state <= SREG_OUT;
+                    state <= SHIFT_WAIT;
+                end
+                SHIFT_WAIT: begin //sll/sra/srl/srav/sllv
+                    case(funct)
+                        fSLL: begin //SLL
+                            memControl = 1'b0; 
+                            PCControl = 1'b0;  
+                            regControl = 1'b0;
+                            multControl = 1'b0;
+                            divControl = 1'b0;
+                            memData = 1'b0;
+                            epcControl = 1'b0; 
+                            aluOutControl = 1'b0;
+                            IRControl = 1'b0; 
+                            shiftSource = 1'b1;//
+                            shiftArtSource = 1'b1;//                    
+                            AControl = 1'b0;
+                            BControl = 1'b0;
+                            HILOControl = 1'b0;
+                            muxHI = 1'b0;
+                            muxLO = 1'b0;
+                            slsControl = 2'b0; 
+                            sssControl = 2'b0; 
+                            IorD = 2'b0; 
+                            muxAControl = 2'b0;
+                            muxBControl = 2'b0; 
+                            excptControl = 2'b0; 
+                            regDest = 2'b0; 
+                            PCSource = 3'b0; 
+                            shiftControl = 3'b010;//
+                            aluControl = 3'b0;   
+                            dataSource = 4'b0;
+                        end
+                        fSRA: begin //SRA
+                            memControl = 1'b0; 
+                            PCControl = 1'b0;  
+                            regControl = 1'b0;
+                            multControl = 1'b0;
+                            divControl = 1'b0;
+                            memData = 1'b0;
+                            epcControl = 1'b0; 
+                            aluOutControl = 1'b0;
+                            IRControl = 1'b0; 
+                            shiftSource = 1'b1;//
+                            shiftArtSource = 1'b1;//                    
+                            AControl = 1'b0;
+                            BControl = 1'b0;
+                            HILOControl = 1'b0;
+                            muxHI = 1'b0;
+                            muxLO = 1'b0;
+                            slsControl = 2'b0; 
+                            sssControl = 2'b0; 
+                            IorD = 2'b0; 
+                            muxAControl = 2'b0;
+                            muxBControl = 2'b0; 
+                            excptControl = 2'b0; 
+                            regDest = 2'b0; 
+                            PCSource = 3'b0; 
+                            shiftControl = 3'b100;//
+                            aluControl = 3'b0;   
+                            dataSource = 4'b0;
+                        end
+                        fSRL: begin //SRL
+                            memControl = 1'b0; 
+                            PCControl = 1'b0;  
+                            regControl = 1'b0;
+                            multControl = 1'b0;
+                            divControl = 1'b0;
+                            memData = 1'b0;
+                            epcControl = 1'b0; 
+                            aluOutControl = 1'b0;
+                            IRControl = 1'b0; 
+                            shiftSource = 1'b1;//
+                            shiftArtSource = 1'b1;//                    
+                            AControl = 1'b0;
+                            BControl = 1'b0;
+                            HILOControl = 1'b0;
+                            muxHI = 1'b0;
+                            muxLO = 1'b0;
+                            slsControl = 2'b0; 
+                            sssControl = 2'b0; 
+                            IorD = 2'b0; 
+                            muxAControl = 2'b0;
+                            muxBControl = 2'b0; 
+                            excptControl = 2'b0; 
+                            regDest = 2'b0; 
+                            PCSource = 3'b0; 
+                            shiftControl = 3'b011;//
+                            aluControl = 3'b0;   
+                            dataSource = 4'b0;
+                        end
+                        fSLLV: begin //SLLV
+                            memControl = 1'b0; 
+                            PCControl = 1'b0;  
+                            regControl = 1'b0;
+                            multControl = 1'b0;
+                            divControl = 1'b0;
+                            memData = 1'b0;
+                            epcControl = 1'b0; 
+                            aluOutControl = 1'b0;
+                            IRControl = 1'b0; 
+                            shiftSource = 1'b0;//
+                            shiftArtSource = 1'b0;//                    
+                            AControl = 1'b0;
+                            BControl = 1'b0;
+                            HILOControl = 1'b0;
+                            muxHI = 1'b0;
+                            muxLO = 1'b0;
+                            slsControl = 2'b0; 
+                            sssControl = 2'b0; 
+                            IorD = 2'b0; 
+                            muxAControl = 2'b0;
+                            muxBControl = 2'b0; 
+                            excptControl = 2'b0; 
+                            regDest = 2'b0; 
+                            PCSource = 3'b0; 
+                            shiftControl = 3'b010;//
+                            aluControl = 3'b0;   
+                            dataSource = 4'b0;
+                        end
+                        fSRAV: begin //SLLV
+                            memControl = 1'b0; 
+                            PCControl = 1'b0;  
+                            regControl = 1'b0;
+                            multControl = 1'b0;
+                            divControl = 1'b0;
+                            memData = 1'b0;
+                            epcControl = 1'b0; 
+                            aluOutControl = 1'b0;
+                            IRControl = 1'b0; 
+                            shiftSource = 1'b0;//
+                            shiftArtSource = 1'b0;//                    
+                            AControl = 1'b0;
+                            BControl = 1'b0;
+                            HILOControl = 1'b0;
+                            muxHI = 1'b0;
+                            muxLO = 1'b0;
+                            slsControl = 2'b0; 
+                            sssControl = 2'b0; 
+                            IorD = 2'b0; 
+                            muxAControl = 2'b0;
+                            muxBControl = 2'b0; 
+                            excptControl = 2'b0; 
+                            regDest = 2'b0; 
+                            PCSource = 3'b0; 
+                            shiftControl = 3'b100;//
+                            aluControl = 3'b0;   
+                            dataSource = 4'b0;
+                        end
+                    endcase
+                    state <= SREG_OUT;                  
                 end
                 SREG_OUT: begin
                     memControl = 1'b0; 

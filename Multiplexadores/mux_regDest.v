@@ -1,5 +1,5 @@
 module mux_regDest(
-    input wire  [1:0]  mux_regDest_control,
+    input wire  [2:0]  mux_regDest_control,
     input wire [25:21] inst25_21_out,
     input wire  [20:16] inst20_16_out,
     input wire  [15:11] inst15_11_out,

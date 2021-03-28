@@ -1,5 +1,5 @@
 Assembler report for ProjetoInfraHard
-Sun Mar 28 11:28:36 2021
+Sun Mar 28 11:57:56 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.sof
-  6. Assembler Device Options: C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.pof
+  5. Assembler Device Options: C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.sof
+  6. Assembler Device Options: C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Mar 28 11:28:36 2021 ;
+; Assembler Status      ; Successful - Sun Mar 28 11:57:56 2021 ;
 ; Revision Name         ; ProjetoInfraHard                      ;
 ; Top-level Entity Name ; cpu                                   ;
 ; Family                ; Stratix II                            ;
@@ -79,37 +79,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+--------------------------------------------------------+
-; Assembler Generated Files                              ;
-+--------------------------------------------------------+
-; File Name                                              ;
-+--------------------------------------------------------+
-; C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.sof ;
-; C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.pof ;
-+--------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                            ;
++--------------------------------------------------------------------------------------+
+; File Name                                                                            ;
++--------------------------------------------------------------------------------------+
+; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.sof ;
+; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.pof ;
++--------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.sof ;
-+----------------+-----------------------------------------------------------------+
-; Option         ; Setting                                                         ;
-+----------------+-----------------------------------------------------------------+
-; Device         ; EP2S15F484C3                                                    ;
-; JTAG usercode  ; 0xFFFFFFFF                                                      ;
-; Checksum       ; 0x006FAE47                                                      ;
-+----------------+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.sof ;
++----------------+-----------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                       ;
++----------------+-----------------------------------------------------------------------------------------------+
+; Device         ; EP2S15F484C3                                                                                  ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                                    ;
+; Checksum       ; 0x006FA8F9                                                                                    ;
++----------------+-----------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.pof ;
-+--------------------+-------------------------------------------------------------+
-; Option             ; Setting                                                     ;
-+--------------------+-------------------------------------------------------------+
-; Device             ; EPC16                                                       ;
-; JTAG usercode      ; 0xFFFFFFFF                                                  ;
-; Checksum           ; 0x1E1F79BC                                                  ;
-; Compression Ratio  ; 2                                                           ;
-+--------------------+-------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.pof ;
++--------------------+-------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                   ;
++--------------------+-------------------------------------------------------------------------------------------+
+; Device             ; EPC16                                                                                     ;
+; JTAG usercode      ; 0xFFFFFFFF                                                                                ;
+; Checksum           ; 0x1E1FA773                                                                                ;
+; Compression Ratio  ; 2                                                                                         ;
++--------------------+-------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -118,14 +118,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun Mar 28 11:28:34 2021
+    Info: Processing started: Sun Mar 28 11:57:55 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ProjetoInfraHard -c ProjetoInfraHard
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 235 megabytes
-    Info: Processing ended: Sun Mar 28 11:28:36 2021
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sun Mar 28 11:57:56 2021
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 

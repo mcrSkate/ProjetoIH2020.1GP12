@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProjetoInfraHard
-Sun Mar 28 11:28:20 2021
+Sun Mar 28 11:57:43 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sun Mar 28 11:28:20 2021        ;
+; Analysis & Synthesis Status   ; Successful - Sun Mar 28 11:57:43 2021        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; ProjetoInfraHard                             ;
 ; Top-level Entity Name         ; cpu                                          ;
@@ -166,47 +166,47 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                   ;
-+--------------------------------------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path                                               ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                       ;
-+--------------------------------------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
-; cpu.v                                                                          ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/projeto hw/cpu.v                                                            ;
-; instrucoes.mif                                                                 ; yes             ; User Memory Initialization File  ; C:/Users/mandy/Desktop/projeto hw/instrucoes.mif                                                   ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/controle.v                         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/controle.v                         ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_load_size.v          ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_load_size.v          ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_store_size.v         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_store_size.v         ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2.v      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2.v      ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2_mux.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2_mux.v  ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_16.v     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_16.v     ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_1_32.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_1_32.v  ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_16_32.v ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_16_32.v ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_b.v            ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_b.v            ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_data_source.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_data_source.v  ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_excpt.v        ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_excpt.v        ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_hi.v           ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_hi.v           ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_iord.v         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_iord.v         ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_lo.v           ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_lo.v           ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_pc_source.v    ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_pc_source.v    ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_a.v            ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_a.v            ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_regDest.v      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_regDest.v      ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftART.v     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftART.v     ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftSource.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftSource.v  ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/div.v                      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/div.v                      ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/mult.v                     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/mult.v                     ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/concatena_pc.v       ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/concatena_pc.v       ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/inst_concatener.v    ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/inst_concatener.v    ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Banco_reg.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Banco_reg.vhd   ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Instr_Reg.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Instr_Reg.vhd   ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Memoria.vhd     ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Memoria.vhd     ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/RegDesloc.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/RegDesloc.vhd   ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Registrador.vhd ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Registrador.vhd ;
-; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/ula32.vhd       ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/ula32.vhd       ;
-; lpm_ram_dq.tdf                                                                 ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf                       ;
-; altram.tdf                                                                     ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf                           ;
-; altsyncram.tdf                                                                 ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf                       ;
-; db/altsyncram_g2a1.tdf                                                         ; yes             ; Auto-Generated Megafunction      ; C:/Users/mandy/Desktop/projeto hw/db/altsyncram_g2a1.tdf                                           ;
-+--------------------------------------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                       ;
++------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+; StoreLoad/set_load_size.v          ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_load_size.v          ;
+; StoreLoad/set_store_size.v         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_store_size.v         ;
+; ShiftsAndSigns/shift_left_2.v      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2.v      ;
+; ShiftsAndSigns/shift_left_2_mux.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2_mux.v  ;
+; ShiftsAndSigns/shift_left_16.v     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_16.v     ;
+; ShiftsAndSigns/sign_extend_1_32.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_1_32.v  ;
+; ShiftsAndSigns/sign_extend_16_32.v ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_16_32.v ;
+; Multiplexadores/mux_a.v            ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_a.v            ;
+; Multiplexadores/mux_b.v            ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_b.v            ;
+; Multiplexadores/mux_data_source.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_data_source.v  ;
+; Multiplexadores/mux_excpt.v        ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_excpt.v        ;
+; Multiplexadores/mux_hi.v           ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_hi.v           ;
+; Multiplexadores/mux_iord.v         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_iord.v         ;
+; Multiplexadores/mux_lo.v           ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_lo.v           ;
+; Multiplexadores/mux_pc_source.v    ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_pc_source.v    ;
+; Multiplexadores/mux_regDest.v      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_regDest.v      ;
+; Multiplexadores/mux_shiftART.v     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftART.v     ;
+; Multiplexadores/mux_shiftSource.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftSource.v  ;
+; MultDiv/div.v                      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/div.v                      ;
+; MultDiv/mult.v                     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/mult.v                     ;
+; Concatenacoes/concatena_pc.v       ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/concatena_pc.v       ;
+; Concatenacoes/inst_concatener.v    ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/inst_concatener.v    ;
+; componentesCedidos/Banco_reg.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Banco_reg.vhd   ;
+; componentesCedidos/Instr_Reg.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Instr_Reg.vhd   ;
+; componentesCedidos/Memoria.vhd     ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Memoria.vhd     ;
+; componentesCedidos/RegDesloc.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/RegDesloc.vhd   ;
+; componentesCedidos/Registrador.vhd ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Registrador.vhd ;
+; componentesCedidos/ula32.vhd       ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/ula32.vhd       ;
+; controle.v                         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/controle.v                         ;
+; cpu.v                              ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/cpu.v                              ;
+; instrucoes.mif                     ; yes             ; User Memory Initialization File  ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/instrucoes.mif                     ;
+; lpm_ram_dq.tdf                     ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf                       ;
+; altram.tdf                         ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf                           ;
+; altsyncram.tdf                     ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf                       ;
+; db/altsyncram_g2a1.tdf             ; yes             ; Auto-Generated Megafunction      ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/db/altsyncram_g2a1.tdf             ;
++------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -788,75 +788,75 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sun Mar 28 11:27:58 2021
+    Info: Processing started: Sun Mar 28 11:57:25 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoInfraHard -c ProjetoInfraHard
-Info: Found 1 design units, including 1 entities, in source file cpu.v
-    Info: Found entity 1: cpu
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/controle.v
-    Info: Found entity 1: controle
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/storeload/set_load_size.v
+Info: Found 1 design units, including 1 entities, in source file storeload/set_load_size.v
     Info: Found entity 1: set_load_size
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/storeload/set_store_size.v
+Info: Found 1 design units, including 1 entities, in source file storeload/set_store_size.v
     Info: Found entity 1: set_store_size
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/shift_left_2.v
+Info: Found 1 design units, including 1 entities, in source file shiftsandsigns/shift_left_2.v
     Info: Found entity 1: shift_left_2
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/shift_left_2_mux.v
+Info: Found 1 design units, including 1 entities, in source file shiftsandsigns/shift_left_2_mux.v
     Info: Found entity 1: shift_left_2_mux
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/shift_left_16.v
+Info: Found 1 design units, including 1 entities, in source file shiftsandsigns/shift_left_16.v
     Info: Found entity 1: shift_left_16
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/sign_extend_1_32.v
+Info: Found 1 design units, including 1 entities, in source file shiftsandsigns/sign_extend_1_32.v
     Info: Found entity 1: sign_extend_1_32
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/sign_extend_16_32.v
+Info: Found 1 design units, including 1 entities, in source file shiftsandsigns/sign_extend_16_32.v
     Info: Found entity 1: sign_extend_16_32
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_b.v
-    Info: Found entity 1: mux_b
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_data_source.v
-    Info: Found entity 1: mux_data_source
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_excpt.v
-    Info: Found entity 1: mux_excpt
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_hi.v
-    Info: Found entity 1: mux_hi
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_iord.v
-    Info: Found entity 1: mux_iord
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_lo.v
-    Info: Found entity 1: mux_lo
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_pc_source.v
-    Info: Found entity 1: mux_pc_source
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_a.v
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_a.v
     Info: Found entity 1: mux_a
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_regdest.v
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_b.v
+    Info: Found entity 1: mux_b
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_data_source.v
+    Info: Found entity 1: mux_data_source
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_excpt.v
+    Info: Found entity 1: mux_excpt
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_hi.v
+    Info: Found entity 1: mux_hi
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_iord.v
+    Info: Found entity 1: mux_iord
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_lo.v
+    Info: Found entity 1: mux_lo
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_pc_source.v
+    Info: Found entity 1: mux_pc_source
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_regdest.v
     Info: Found entity 1: mux_regDest
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_shiftart.v
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_shiftart.v
     Info: Found entity 1: mux_shiftART
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_shiftsource.v
+Info: Found 1 design units, including 1 entities, in source file multiplexadores/mux_shiftsource.v
     Info: Found entity 1: mux_shiftSource
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multdiv/div.v
+Info: Found 1 design units, including 1 entities, in source file multdiv/div.v
     Info: Found entity 1: div
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multdiv/mult.v
+Info: Found 1 design units, including 1 entities, in source file multdiv/mult.v
     Info: Found entity 1: mult
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/concatenacoes/concatena_pc.v
+Info: Found 1 design units, including 1 entities, in source file concatenacoes/concatena_pc.v
     Info: Found entity 1: concatena_pc
-Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/concatenacoes/inst_concatener.v
+Info: Found 1 design units, including 1 entities, in source file concatenacoes/inst_concatener.v
     Info: Found entity 1: inst_concatener
-Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/banco_reg.vhd
+Info: Found 2 design units, including 1 entities, in source file componentescedidos/banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
     Info: Found entity 1: Banco_reg
-Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/instr_reg.vhd
+Info: Found 2 design units, including 1 entities, in source file componentescedidos/instr_reg.vhd
     Info: Found design unit 1: Instr_Reg-behavioral_arch
     Info: Found entity 1: Instr_Reg
-Info: Found 3 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/memoria.vhd
+Info: Found 3 design units, including 1 entities, in source file componentescedidos/memoria.vhd
     Info: Found design unit 1: ram_constants
     Info: Found design unit 2: Memoria-behavioral_arch
     Info: Found entity 1: Memoria
-Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/regdesloc.vhd
+Info: Found 2 design units, including 1 entities, in source file componentescedidos/regdesloc.vhd
     Info: Found design unit 1: RegDesloc-behavioral_arch
     Info: Found entity 1: RegDesloc
-Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/registrador.vhd
+Info: Found 2 design units, including 1 entities, in source file componentescedidos/registrador.vhd
     Info: Found design unit 1: Registrador-behavioral_arch
     Info: Found entity 1: Registrador
-Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/ula32.vhd
+Info: Found 2 design units, including 1 entities, in source file componentescedidos/ula32.vhd
     Info: Found design unit 1: Ula32-behavioral
     Info: Found entity 1: Ula32
+Info: Found 1 design units, including 1 entities, in source file controle.v
+    Info: Found entity 1: controle
+Info: Found 1 design units, including 1 entities, in source file cpu.v
+    Info: Found entity 1: cpu
 Info: Found 1 design units, including 1 entities, in source file projetoinfrahard.bdf
     Info: Found entity 1: ProjetoInfraHard
 Info: Elaborating entity "cpu" for the top level hierarchy
@@ -1429,7 +1429,7 @@ Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[27] has unsafe behavio
     Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
 Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[29] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
-Info: Generated suppressed messages file C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.map.smsg
+Info: Generated suppressed messages file C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.map.smsg
 Info: Implemented 4616 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 133 output pins
@@ -1437,14 +1437,14 @@ Info: Implemented 4616 device resources after synthesis - the final resource cou
     Info: Implemented 32 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 321 warnings
     Info: Peak virtual memory: 277 megabytes
-    Info: Processing ended: Sun Mar 28 11:28:20 2021
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Processing ended: Sun Mar 28 11:57:43 2021
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.map.smsg.
+The suppressed messages can be found in C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ProjetoInfraHard.map.smsg.
 
 

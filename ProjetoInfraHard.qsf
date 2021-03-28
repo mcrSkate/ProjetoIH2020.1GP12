@@ -47,42 +47,42 @@ set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name CHECK_OUTPUTS OFF
 set_global_assignment -name ADD_DEFAULT_PINS_TO_SIMULATION_OUTPUT_WAVEFORMS ON
-set_global_assignment -name VERILOG_FILE cpu.v
-set_global_assignment -name MIF_FILE instrucoes.mif
-set_global_assignment -name VECTOR_WAVEFORM_FILE ProjetoInfraHard.vwf
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/controle.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_load_size.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_store_size.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2_mux.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_16.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_1_32.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_16_32.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_b.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_data_source.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_excpt.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_hi.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_iord.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_lo.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_pc_source.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_a.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_regDest.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftART.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftSource.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/div.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/mult.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/concatena_pc.v"
-set_global_assignment -name VERILOG_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/inst_concatener.v"
-set_global_assignment -name VHDL_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Banco_reg.vhd"
-set_global_assignment -name VHDL_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Instr_Reg.vhd"
-set_global_assignment -name VHDL_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Memoria.vhd"
-set_global_assignment -name VHDL_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/RegDesloc.vhd"
-set_global_assignment -name VHDL_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Registrador.vhd"
-set_global_assignment -name VHDL_FILE "../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/ula32.vhd"
-set_global_assignment -name BDF_FILE ProjetoInfraHard.bdf
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE ProjetoInfraHard.vwf
 set_global_assignment -name SIMULATOR_GENERATE_POWERPLAY_VCD_FILE ON
 set_global_assignment -name SIMULATOR_POWERPLAY_VCD_FILE_OUTPUT_DESTINATION ProjetoInfraHard.vcd
+set_global_assignment -name VERILOG_FILE StoreLoad/set_load_size.v
+set_global_assignment -name VERILOG_FILE StoreLoad/set_store_size.v
+set_global_assignment -name VERILOG_FILE ShiftsAndSigns/shift_left_2.v
+set_global_assignment -name VERILOG_FILE ShiftsAndSigns/shift_left_2_mux.v
+set_global_assignment -name VERILOG_FILE ShiftsAndSigns/shift_left_16.v
+set_global_assignment -name VERILOG_FILE ShiftsAndSigns/sign_extend_1_32.v
+set_global_assignment -name VERILOG_FILE ShiftsAndSigns/sign_extend_16_32.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_a.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_b.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_data_source.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_excpt.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_hi.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_iord.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_lo.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_pc_source.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_regDest.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_shiftART.v
+set_global_assignment -name VERILOG_FILE Multiplexadores/mux_shiftSource.v
+set_global_assignment -name VERILOG_FILE MultDiv/div.v
+set_global_assignment -name VERILOG_FILE MultDiv/mult.v
+set_global_assignment -name VERILOG_FILE Concatenacoes/concatena_pc.v
+set_global_assignment -name VERILOG_FILE Concatenacoes/inst_concatener.v
+set_global_assignment -name VHDL_FILE componentesCedidos/Banco_reg.vhd
+set_global_assignment -name VHDL_FILE componentesCedidos/Instr_Reg.vhd
+set_global_assignment -name VHDL_FILE componentesCedidos/Memoria.vhd
+set_global_assignment -name VHDL_FILE componentesCedidos/RegDesloc.vhd
+set_global_assignment -name VHDL_FILE componentesCedidos/Registrador.vhd
+set_global_assignment -name VHDL_FILE componentesCedidos/ula32.vhd
+set_global_assignment -name VERILOG_FILE controle.v
+set_global_assignment -name VERILOG_FILE cpu.v
+set_global_assignment -name MIF_FILE instrucoes.mif
+set_global_assignment -name VECTOR_WAVEFORM_FILE ProjetoInfraHard.vwf
+set_global_assignment -name BDF_FILE ProjetoInfraHard.bdf
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top

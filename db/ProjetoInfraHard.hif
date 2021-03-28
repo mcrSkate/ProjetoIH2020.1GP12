@@ -1,0 +1,3476 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+7
+3700
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+shift_left_2
+# storage
+db|ProjetoInfraHard.(2).cnf
+db|ProjetoInfraHard.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|shiftsandsigns|shift_left_2.v
+3dd9f0da7ba27773c53674f43aa8da
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+shift_left_2:b2v_inst19
+}
+# macro_sequence
+
+# end
+# entity
+shift_left_2_mux
+# storage
+db|ProjetoInfraHard.(3).cnf
+db|ProjetoInfraHard.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|shiftsandsigns|shift_left_2_mux.v
+e718f7cf5695ac51f44c39f22c9821
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+shift_left_2_mux:b2v_inst21
+}
+# macro_sequence
+
+# end
+# entity
+shift_left_16
+# storage
+db|ProjetoInfraHard.(4).cnf
+db|ProjetoInfraHard.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|shiftsandsigns|shift_left_16.v
+519eefe0b79b2993e54c121ce4dbfd85
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+shift_left_16:b2v_inst23
+}
+# macro_sequence
+
+# end
+# entity
+sign_extend_16_32
+# storage
+db|ProjetoInfraHard.(6).cnf
+db|ProjetoInfraHard.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|shiftsandsigns|sign_extend_16_32.v
+1ac01b4ae72c9df04c9987cbf1d30
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+sign_extend_16_32:b2v_inst38
+}
+# macro_sequence
+
+# end
+# entity
+mux_a
+# storage
+db|ProjetoInfraHard.(7).cnf
+db|ProjetoInfraHard.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_a.v
+685e8e85bdf4abe35457d3ebc5325711
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_a:b2v_inst31
+}
+# macro_sequence
+
+# end
+# entity
+mux_b
+# storage
+db|ProjetoInfraHard.(8).cnf
+db|ProjetoInfraHard.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_b.v
+c3bf35ac707fbf96b9dc4d38d09ca0e6
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_b:b2v_inst36
+}
+# macro_sequence
+
+# end
+# entity
+mux_data_source
+# storage
+db|ProjetoInfraHard.(9).cnf
+db|ProjetoInfraHard.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_data_source.v
+471dc9a749e40cee56dfbbf5b4fa170
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_data_source:b2v_inst30
+}
+# macro_sequence
+
+# end
+# entity
+mux_hi
+# storage
+db|ProjetoInfraHard.(11).cnf
+db|ProjetoInfraHard.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_hi.v
+ce2342e648c255dd8aacb551eff517c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_hi:b2v_inst33
+}
+# macro_sequence
+
+# end
+# entity
+mux_iord
+# storage
+db|ProjetoInfraHard.(12).cnf
+db|ProjetoInfraHard.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_iord.v
+40fcb7e6c91724cece6bc75436f4336d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_iord:b2v_inst26
+}
+# macro_sequence
+
+# end
+# entity
+mux_lo
+# storage
+db|ProjetoInfraHard.(13).cnf
+db|ProjetoInfraHard.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_lo.v
+ca9e62eb818428a2f3363329397ad1
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_lo:b2v_inst34
+}
+# macro_sequence
+
+# end
+# entity
+mux_pc_source
+# storage
+db|ProjetoInfraHard.(14).cnf
+db|ProjetoInfraHard.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_pc_source.v
+12a7e266fa611995495b73b762eab26f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_pc_source:b2v_inst35
+}
+# macro_sequence
+
+# end
+# entity
+concatena_pc
+# storage
+db|ProjetoInfraHard.(20).cnf
+db|ProjetoInfraHard.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|concatenacoes|concatena_pc.v
+e5bda15da14c53139bd3db86da8778b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+concatena_pc:b2v_inst20
+}
+# macro_sequence
+
+# end
+# entity
+inst_concatener
+# storage
+db|ProjetoInfraHard.(21).cnf
+db|ProjetoInfraHard.(21).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|concatenacoes|inst_concatener.v
+d84771f1abfd42c9caecaccee06875e4
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+inst_concatener:b2v_inst18
+}
+# macro_sequence
+
+# end
+# entity
+Instr_Reg
+# storage
+db|ProjetoInfraHard.(23).cnf
+db|ProjetoInfraHard.(23).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|componentescedidos|instr_reg.vhd
+2210c8a335c3f44acebaf05a94bee
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Instr_Reg:b2v_inst2
+}
+# lmf
+m:|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+LPM_RAM_DQ
+# storage
+db|ProjetoInfraHard.(25).cnf
+db|ProjetoInfraHard.(25).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+8cb8fb4e8f3e90656f489fc92aabb9
+7
+# user_parameter {
+LPM_WIDTH
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHAD
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_NUMWORDS
+0
+PARAMETER_SIGNED_DEC
+USR
+LPM_INDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_ADDRESS_CONTROL
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_OUTDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_FILE
+instrucoes.mif
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+NOTHING
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+WE
+-1
+3
+Q7
+-1
+3
+Q6
+-1
+3
+Q5
+-1
+3
+Q4
+-1
+3
+Q3
+-1
+3
+Q2
+-1
+3
+Q1
+-1
+3
+Q0
+-1
+3
+OUTCLOCK
+-1
+3
+INCLOCK
+-1
+3
+DATA7
+-1
+3
+DATA6
+-1
+3
+DATA5
+-1
+3
+DATA4
+-1
+3
+DATA3
+-1
+3
+DATA2
+-1
+3
+DATA1
+-1
+3
+DATA0
+-1
+3
+ADDRESS7
+-1
+3
+ADDRESS6
+-1
+3
+ADDRESS5
+-1
+3
+ADDRESS4
+-1
+3
+ADDRESS3
+-1
+3
+ADDRESS2
+-1
+3
+ADDRESS1
+-1
+3
+ADDRESS0
+-1
+3
+}
+# hierarchies {
+Memoria:b2v_inst1|lpm_ram_dq:MEM
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three
+}
+# macro_sequence
+
+# end
+# entity
+altram
+# storage
+db|ProjetoInfraHard.(26).cnf
+db|ProjetoInfraHard.(26).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|altram.tdf
+c72d5dfba4da3c5a1457d7f3112cd3b
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+AD_WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS
+256
+PARAMETER_UNKNOWN
+USR
+FILE
+instrucoes.mif
+PARAMETER_UNKNOWN
+USR
+REGISTERINPUTMODE
+ALL
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+MAXIMUM_DEPTH
+2048
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+SUPPRESS_MEMORY_CONVERSION_WARNINGS
+OFF
+PARAMETER_UNKNOWN
+DEF
+ENABLE_RAM_BENCHMARKING_MODE
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+we
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+data7
+-1
+3
+data6
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+clocko
+-1
+3
+clocki
+-1
+3
+address7
+-1
+3
+address6
+-1
+3
+address5
+-1
+3
+address4
+-1
+3
+address3
+-1
+3
+address2
+-1
+3
+address1
+-1
+3
+address0
+-1
+3
+}
+# hierarchies {
+Memoria:b2v_inst1|lpm_ram_dq:MEM|altram:sram
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One|altram:sram
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two|altram:sram
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three|altram:sram
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|ProjetoInfraHard.(27).cnf
+db|ProjetoInfraHard.(27).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|altsyncram.tdf
+67d9a3902c8a461c1d5750189e124f2
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+SINGLE_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+8
+PARAMETER_UNKNOWN
+USR
+WIDTHAD_A
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS_A
+256
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_A
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTHAD_B
+1
+PARAMETER_UNKNOWN
+DEF
+NUMWORDS_B
+1
+PARAMETER_UNKNOWN
+DEF
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+USR
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+instrucoes.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_g2a1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# hierarchies {
+Memoria:b2v_inst1|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block
+}
+# macro_sequence
+
+# end
+# entity
+mux_shiftART
+# storage
+db|ProjetoInfraHard.(16).cnf
+db|ProjetoInfraHard.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_shiftart.v
+24727130b3d88f6a24a5c3ae8e8d752e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_shiftART:b2v_inst28
+}
+# macro_sequence
+
+# end
+# entity
+mux_shiftSource
+# storage
+db|ProjetoInfraHard.(17).cnf
+db|ProjetoInfraHard.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_shiftsource.v
+e0c2f613df5028ceecbcc15912b0b563
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_shiftSource:b2v_inst27
+}
+# macro_sequence
+
+# end
+# entity
+mux_excpt
+# storage
+db|ProjetoInfraHard.(10).cnf
+db|ProjetoInfraHard.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_excpt.v
+3466a88d276f23aa95471db1322b3a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_excpt:b2v_inst25
+}
+# macro_sequence
+
+# end
+# entity
+LPM_RAM_DQ
+# storage
+db|ProjetoInfraHard.(34).cnf
+db|ProjetoInfraHard.(34).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+8cb8fb4e8f3e90656f489fc92aabb9
+7
+# user_parameter {
+LPM_WIDTH
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHAD
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_NUMWORDS
+0
+PARAMETER_SIGNED_DEC
+USR
+LPM_INDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_ADDRESS_CONTROL
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_OUTDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_FILE
+instrucoesSUB.mif
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+NOTHING
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+WE
+-1
+3
+Q7
+-1
+3
+Q6
+-1
+3
+Q5
+-1
+3
+Q4
+-1
+3
+Q3
+-1
+3
+Q2
+-1
+3
+Q1
+-1
+3
+Q0
+-1
+3
+OUTCLOCK
+-1
+3
+INCLOCK
+-1
+3
+DATA7
+-1
+3
+DATA6
+-1
+3
+DATA5
+-1
+3
+DATA4
+-1
+3
+DATA3
+-1
+3
+DATA2
+-1
+3
+DATA1
+-1
+3
+DATA0
+-1
+3
+ADDRESS7
+-1
+3
+ADDRESS6
+-1
+3
+ADDRESS5
+-1
+3
+ADDRESS4
+-1
+3
+ADDRESS3
+-1
+3
+ADDRESS2
+-1
+3
+ADDRESS1
+-1
+3
+ADDRESS0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+altram
+# storage
+db|ProjetoInfraHard.(35).cnf
+db|ProjetoInfraHard.(35).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|altram.tdf
+c72d5dfba4da3c5a1457d7f3112cd3b
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+AD_WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS
+256
+PARAMETER_UNKNOWN
+USR
+FILE
+instrucoesSUB.mif
+PARAMETER_UNKNOWN
+USR
+REGISTERINPUTMODE
+ALL
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+MAXIMUM_DEPTH
+2048
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+SUPPRESS_MEMORY_CONVERSION_WARNINGS
+OFF
+PARAMETER_UNKNOWN
+DEF
+ENABLE_RAM_BENCHMARKING_MODE
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+we
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+data7
+-1
+3
+data6
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+clocko
+-1
+3
+clocki
+-1
+3
+address7
+-1
+3
+address6
+-1
+3
+address5
+-1
+3
+address4
+-1
+3
+address3
+-1
+3
+address2
+-1
+3
+address1
+-1
+3
+address0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|ProjetoInfraHard.(36).cnf
+db|ProjetoInfraHard.(36).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|altsyncram.tdf
+67d9a3902c8a461c1d5750189e124f2
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+SINGLE_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+8
+PARAMETER_UNKNOWN
+USR
+WIDTHAD_A
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS_A
+256
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_A
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTHAD_B
+1
+PARAMETER_UNKNOWN
+DEF
+NUMWORDS_B
+1
+PARAMETER_UNKNOWN
+DEF
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+USR
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+instrucoesSUB.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_qca1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+LPM_RAM_DQ
+# storage
+db|ProjetoInfraHard.(38).cnf
+db|ProjetoInfraHard.(38).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|lpm_ram_dq.tdf
+8cb8fb4e8f3e90656f489fc92aabb9
+7
+# user_parameter {
+LPM_WIDTH
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_WIDTHAD
+8
+PARAMETER_SIGNED_DEC
+USR
+LPM_NUMWORDS
+0
+PARAMETER_SIGNED_DEC
+USR
+LPM_INDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_ADDRESS_CONTROL
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_OUTDATA
+REGISTERED
+PARAMETER_UNKNOWN
+USR
+LPM_FILE
+instrucoesADD.mif
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+NOTHING
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+WE
+-1
+3
+Q7
+-1
+3
+Q6
+-1
+3
+Q5
+-1
+3
+Q4
+-1
+3
+Q3
+-1
+3
+Q2
+-1
+3
+Q1
+-1
+3
+Q0
+-1
+3
+OUTCLOCK
+-1
+3
+INCLOCK
+-1
+3
+DATA7
+-1
+3
+DATA6
+-1
+3
+DATA5
+-1
+3
+DATA4
+-1
+3
+DATA3
+-1
+3
+DATA2
+-1
+3
+DATA1
+-1
+3
+DATA0
+-1
+3
+ADDRESS7
+-1
+3
+ADDRESS6
+-1
+3
+ADDRESS5
+-1
+3
+ADDRESS4
+-1
+3
+ADDRESS3
+-1
+3
+ADDRESS2
+-1
+3
+ADDRESS1
+-1
+3
+ADDRESS0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+altram
+# storage
+db|ProjetoInfraHard.(39).cnf
+db|ProjetoInfraHard.(39).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|altram.tdf
+c72d5dfba4da3c5a1457d7f3112cd3b
+7
+# user_parameter {
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+AD_WIDTH
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS
+256
+PARAMETER_UNKNOWN
+USR
+FILE
+instrucoesADD.mif
+PARAMETER_UNKNOWN
+USR
+REGISTERINPUTMODE
+ALL
+PARAMETER_UNKNOWN
+USR
+USE_EAB
+ON
+PARAMETER_UNKNOWN
+USR
+MAXIMUM_DEPTH
+2048
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+SUPPRESS_MEMORY_CONVERSION_WARNINGS
+OFF
+PARAMETER_UNKNOWN
+DEF
+ENABLE_RAM_BENCHMARKING_MODE
+OFF
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+we
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+data7
+-1
+3
+data6
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+clocko
+-1
+3
+clocki
+-1
+3
+address7
+-1
+3
+address6
+-1
+3
+address5
+-1
+3
+address4
+-1
+3
+address3
+-1
+3
+address2
+-1
+3
+address1
+-1
+3
+address0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|ProjetoInfraHard.(40).cnf
+db|ProjetoInfraHard.(40).cnf
+# case_insensitive
+# source_file
+m:|alteraquartus91sp2portable|quartus|libraries|megafunctions|altsyncram.tdf
+67d9a3902c8a461c1d5750189e124f2
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+SINGLE_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+8
+PARAMETER_UNKNOWN
+USR
+WIDTHAD_A
+8
+PARAMETER_UNKNOWN
+USR
+NUMWORDS_A
+256
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_A
+CLOCK1
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+1
+PARAMETER_UNKNOWN
+DEF
+WIDTHAD_B
+1
+PARAMETER_UNKNOWN
+DEF
+NUMWORDS_B
+1
+PARAMETER_UNKNOWN
+DEF
+INDATA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_WRADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_UNKNOWN
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_UNKNOWN
+USR
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+DONT_CARE
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+instrucoesADD.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_A
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_OUTPUT_B
+NORMAL
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Stratix II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_pba1
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+Banco_reg
+# storage
+db|ProjetoInfraHard.(24).cnf
+db|ProjetoInfraHard.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|componentescedidos|banco_reg.vhd
+2cadfcaf44a2386f30e8abc1e4fa4f58
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Banco_reg:b2v_inst3
+}
+# lmf
+m:|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Registrador
+# storage
+db|ProjetoInfraHard.(30).cnf
+db|ProjetoInfraHard.(30).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|componentescedidos|registrador.vhd
+9c2fa77c717e3583f352d6d9d43cb93
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Registrador:b2v_A
+Registrador:b2v_ALUout
+Registrador:b2v_B
+Registrador:b2v_EPC
+Registrador:b2v_HI
+Registrador:b2v_LO
+Registrador:b2v_Memory_Data_Register
+Registrador:b2v_PC
+}
+# lmf
+m:|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+ula32
+# storage
+db|ProjetoInfraHard.(31).cnf
+db|ProjetoInfraHard.(31).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|componentescedidos|ula32.vhd
+d6bb5bfd211de44547e9b6fe9d17a72
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Ula32:b2v_inst6
+}
+# lmf
+m:|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Memoria
+# storage
+db|ProjetoInfraHard.(22).cnf
+db|ProjetoInfraHard.(22).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|componentescedidos|memoria.vhd
+b63d785d946ccb8c4d981b33517dfef
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Memoria:b2v_inst1
+}
+# lmf
+m:|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+sign_extend_1_32
+# storage
+db|ProjetoInfraHard.(5).cnf
+db|ProjetoInfraHard.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|shiftsandsigns|sign_extend_1_32.v
+e5a5d3256b53b6dd1f2403c4142f2cf
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+sign_extend_1_32:b2v_inst22
+}
+# macro_sequence
+
+# end
+# entity
+RegDesloc
+# storage
+db|ProjetoInfraHard.(29).cnf
+db|ProjetoInfraHard.(29).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|componentescedidos|regdesloc.vhd
+71b6e34bf1c79c645cf497581bd388e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+RegDesloc:b2v_inst12
+}
+# lmf
+m:|alteraquartus91sp2portable|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+set_load_size
+# storage
+db|ProjetoInfraHard.(0).cnf
+db|ProjetoInfraHard.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|storeload|set_load_size.v
+89e83f2efafe536b5a8ad937299de553
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+set_load_size:b2v_inst11
+}
+# macro_sequence
+
+# end
+# entity
+set_store_size
+# storage
+db|ProjetoInfraHard.(1).cnf
+db|ProjetoInfraHard.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|storeload|set_store_size.v
+50e61eb038e20be7e759dff45d1b5
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+set_store_size:b2v_inst10
+}
+# macro_sequence
+
+# end
+# entity
+mux_regDest
+# storage
+db|ProjetoInfraHard.(15).cnf
+db|ProjetoInfraHard.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multiplexadores|mux_regdest.v
+ed5b91d4e683e69ac9f7ee48d9dacbbf
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux_regDest:b2v_inst37
+}
+# macro_sequence
+
+# end
+# entity
+cpu
+# storage
+db|ProjetoInfraHard.(18).cnf
+db|ProjetoInfraHard.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+5adffca6b5672e2b9782c344d7e930
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+controle
+# storage
+db|ProjetoInfraHard.(32).cnf
+db|ProjetoInfraHard.(32).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|controle.v
+de8c5dca7a84be3c62a1b631433c629
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+opADDI
+001000
+PARAMETER_UNSIGNED_BIN
+DEF
+opADDIU
+001001
+PARAMETER_UNSIGNED_BIN
+DEF
+opBEQ
+000100
+PARAMETER_UNSIGNED_BIN
+DEF
+opBNE
+000101
+PARAMETER_UNSIGNED_BIN
+DEF
+opBLE
+000110
+PARAMETER_UNSIGNED_BIN
+DEF
+opBGT
+000111
+PARAMETER_UNSIGNED_BIN
+DEF
+opBLM
+000001
+PARAMETER_UNSIGNED_BIN
+DEF
+opLB
+100000
+PARAMETER_UNSIGNED_BIN
+DEF
+opLH
+100001
+PARAMETER_UNSIGNED_BIN
+DEF
+opLUI
+001111
+PARAMETER_UNSIGNED_BIN
+DEF
+opLW
+100011
+PARAMETER_UNSIGNED_BIN
+DEF
+opSB
+101000
+PARAMETER_UNSIGNED_BIN
+DEF
+opSH
+101001
+PARAMETER_UNSIGNED_BIN
+DEF
+opSLTI
+001010
+PARAMETER_UNSIGNED_BIN
+DEF
+opSW
+101011
+PARAMETER_UNSIGNED_BIN
+DEF
+opJ
+000010
+PARAMETER_UNSIGNED_BIN
+DEF
+opJAL
+000011
+PARAMETER_UNSIGNED_BIN
+DEF
+opRTYPE
+000000
+PARAMETER_UNSIGNED_BIN
+DEF
+fADD
+100000
+PARAMETER_UNSIGNED_BIN
+DEF
+fSUB
+100010
+PARAMETER_UNSIGNED_BIN
+DEF
+fAND
+100100
+PARAMETER_UNSIGNED_BIN
+DEF
+fDIV
+011010
+PARAMETER_UNSIGNED_BIN
+DEF
+fMULT
+011000
+PARAMETER_UNSIGNED_BIN
+DEF
+fMFHI
+010000
+PARAMETER_UNSIGNED_BIN
+DEF
+fMFLO
+010010
+PARAMETER_UNSIGNED_BIN
+DEF
+fSLL
+000000
+PARAMETER_UNSIGNED_BIN
+DEF
+fSLLV
+000100
+PARAMETER_UNSIGNED_BIN
+DEF
+fSLT
+101010
+PARAMETER_UNSIGNED_BIN
+DEF
+fSRA
+000011
+PARAMETER_UNSIGNED_BIN
+DEF
+fSRAV
+000111
+PARAMETER_UNSIGNED_BIN
+DEF
+fSRL
+000010
+PARAMETER_UNSIGNED_BIN
+DEF
+fJR
+001000
+PARAMETER_UNSIGNED_BIN
+DEF
+fBREAK
+001101
+PARAMETER_UNSIGNED_BIN
+DEF
+fRTE
+010011
+PARAMETER_UNSIGNED_BIN
+DEF
+fXCHG
+000101
+PARAMETER_UNSIGNED_BIN
+DEF
+START
+0000000
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD
+0000001
+PARAMETER_UNSIGNED_BIN
+DEF
+ADD_AND_SUB
+0000010
+PARAMETER_UNSIGNED_BIN
+DEF
+ADDI
+0000011
+PARAMETER_UNSIGNED_BIN
+DEF
+ADDI_ADDIU
+0000100
+PARAMETER_UNSIGNED_BIN
+DEF
+ADDIU
+0000101
+PARAMETER_UNSIGNED_BIN
+DEF
+AND
+0000110
+PARAMETER_UNSIGNED_BIN
+DEF
+BEQ
+0000111
+PARAMETER_UNSIGNED_BIN
+DEF
+BEQ2
+1010101
+PARAMETER_UNSIGNED_BIN
+DEF
+BGT
+0001000
+PARAMETER_UNSIGNED_BIN
+DEF
+BGT2
+0111011
+PARAMETER_UNSIGNED_BIN
+DEF
+BLE
+0001001
+PARAMETER_UNSIGNED_BIN
+DEF
+BLE2
+0111010
+PARAMETER_UNSIGNED_BIN
+DEF
+BLM
+0001010
+PARAMETER_UNSIGNED_BIN
+DEF
+BLM2
+0001011
+PARAMETER_UNSIGNED_BIN
+DEF
+BLM3
+0111101
+PARAMETER_UNSIGNED_BIN
+DEF
+BLM_WAIT
+0001100
+PARAMETER_UNSIGNED_BIN
+DEF
+BNE
+0001101
+PARAMETER_UNSIGNED_BIN
+DEF
+BNE2
+1101011
+PARAMETER_UNSIGNED_BIN
+DEF
+BREAK
+0001111
+PARAMETER_UNSIGNED_BIN
+DEF
+DECODE
+0010000
+PARAMETER_UNSIGNED_BIN
+DEF
+DIV
+0010001
+PARAMETER_UNSIGNED_BIN
+DEF
+DIV2
+1000011
+PARAMETER_UNSIGNED_BIN
+DEF
+DIV_WAIT
+1000001
+PARAMETER_UNSIGNED_BIN
+DEF
+DIV0
+0010010
+PARAMETER_UNSIGNED_BIN
+DEF
+EXCEPTION
+0010011
+PARAMETER_UNSIGNED_BIN
+DEF
+FETCH
+0010100
+PARAMETER_UNSIGNED_BIN
+DEF
+FETCH2
+0010101
+PARAMETER_UNSIGNED_BIN
+DEF
+FINAL_EXCEPTION
+0001110
+PARAMETER_UNSIGNED_BIN
+DEF
+J
+0010110
+PARAMETER_UNSIGNED_BIN
+DEF
+JAL1
+0010111
+PARAMETER_UNSIGNED_BIN
+DEF
+JAL2
+0011000
+PARAMETER_UNSIGNED_BIN
+DEF
+JR
+0011001
+PARAMETER_UNSIGNED_BIN
+DEF
+LOAD_WAIT
+0011100
+PARAMETER_UNSIGNED_BIN
+DEF
+LOAD_WAIT2
+1011100
+PARAMETER_UNSIGNED_BIN
+DEF
+LOAD_SET
+0111111
+PARAMETER_UNSIGNED_BIN
+DEF
+LUI
+0011101
+PARAMETER_UNSIGNED_BIN
+DEF
+LW_LH_LB
+0011111
+PARAMETER_UNSIGNED_BIN
+DEF
+MFHI
+0100000
+PARAMETER_UNSIGNED_BIN
+DEF
+MFLO
+0100001
+PARAMETER_UNSIGNED_BIN
+DEF
+MULT
+0100010
+PARAMETER_UNSIGNED_BIN
+DEF
+MULT2
+1000010
+PARAMETER_UNSIGNED_BIN
+DEF
+MULT_WAIT
+1000000
+PARAMETER_UNSIGNED_BIN
+DEF
+NO_OPCODE
+0100011
+PARAMETER_UNSIGNED_BIN
+DEF
+OVERFLOWS
+0100100
+PARAMETER_UNSIGNED_BIN
+DEF
+RTE
+0100101
+PARAMETER_UNSIGNED_BIN
+DEF
+SB
+0100110
+PARAMETER_UNSIGNED_BIN
+DEF
+SH
+0100111
+PARAMETER_UNSIGNED_BIN
+DEF
+SHIFT_WAIT
+1010111
+PARAMETER_UNSIGNED_BIN
+DEF
+SLL
+0101000
+PARAMETER_UNSIGNED_BIN
+DEF
+SLLV
+0101001
+PARAMETER_UNSIGNED_BIN
+DEF
+SLT
+0101010
+PARAMETER_UNSIGNED_BIN
+DEF
+SLTI
+0101011
+PARAMETER_UNSIGNED_BIN
+DEF
+SRA
+0101100
+PARAMETER_UNSIGNED_BIN
+DEF
+SRAV
+0101101
+PARAMETER_UNSIGNED_BIN
+DEF
+SREG_OUT
+0101110
+PARAMETER_UNSIGNED_BIN
+DEF
+SRL
+0101111
+PARAMETER_UNSIGNED_BIN
+DEF
+STORE_PC
+0110000
+PARAMETER_UNSIGNED_BIN
+DEF
+STORE_SET
+0011110
+PARAMETER_UNSIGNED_BIN
+DEF
+STORE_WAIT
+0110001
+PARAMETER_UNSIGNED_BIN
+DEF
+STORE_WAIT2
+1011101
+PARAMETER_UNSIGNED_BIN
+DEF
+SUB
+0110010
+PARAMETER_UNSIGNED_BIN
+DEF
+SW
+0110011
+PARAMETER_UNSIGNED_BIN
+DEF
+SW_SH_SB1
+0110100
+PARAMETER_UNSIGNED_BIN
+DEF
+SW_SH_SB2
+0110101
+PARAMETER_UNSIGNED_BIN
+DEF
+WAIT
+0110110
+PARAMETER_UNSIGNED_BIN
+DEF
+WAIT_FINAL
+0111001
+PARAMETER_UNSIGNED_BIN
+DEF
+XCHG1
+0110111
+PARAMETER_UNSIGNED_BIN
+DEF
+XCHG2
+0111000
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+controle:b2v_inst7
+}
+# macro_sequence
+
+# end
+# entity
+mult
+# storage
+db|ProjetoInfraHard.(19).cnf
+db|ProjetoInfraHard.(19).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multdiv|mult.v
+4ab83fb2fb5ef654f5af49e4fea74c
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mult:b2v_inst14
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_g2a1
+# storage
+db|ProjetoInfraHard.(33).cnf
+db|ProjetoInfraHard.(33).cnf
+# case_insensitive
+# source_file
+db|altsyncram_g2a1.tdf
+d8862ea4f7a5427dbb1d3425791064
+7
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+instrucoes.mif
+553386c86e8be1e3bcb9f68491a51654
+}
+# hierarchies {
+Memoria:b2v_inst1|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+div
+# storage
+db|ProjetoInfraHard.(28).cnf
+db|ProjetoInfraHard.(28).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|mandy|desktop|faculdade|nova pasta|projetoih2020.1gp12|multdiv|div.v
+a346eff7bd7f9d55ada91fe91441cbe
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+div:b2v_inst15
+}
+# macro_sequence
+
+# end
+# complete
+

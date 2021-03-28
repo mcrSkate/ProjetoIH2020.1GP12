@@ -561,7 +561,7 @@ module controle(
                         state <= OVERFLOWS;
                     end
                     else begin
-                    state <= WAIT_FINAL;                        
+						state <= WAIT_FINAL;                        
                     end
                 end
                 ADDI: begin
@@ -2333,7 +2333,7 @@ module controle(
                     shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
-                    HILOControl = 1'b0;
+                    HILOControl = 1'b1;
                     muxHI = 1'b0;
                     muxLO = 1'b0;
                     slsControl = 2'b0; 
@@ -2348,7 +2348,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contador == 33) begin
+                    if(contador >= 33) begin
                         state <= DIV2;
                     end
                     else begin
@@ -2435,9 +2435,9 @@ module controle(
                     shiftArtSource = 1'b0;                    
                     AControl = 1'b0;
                     BControl = 1'b0;
-                    HILOControl = 1'b0;
-                    muxHI = 1'b0;
-                    muxLO = 1'b0;
+                    HILOControl = 1'b1;
+                    muxHI = 1'b1;
+                    muxLO = 1'b1;
                     slsControl = 2'b0; 
                     sssControl = 2'b0; 
                     IorD = 2'b0; 
@@ -2450,7 +2450,7 @@ module controle(
                     aluControl = 3'b0;   
                     dataSource = 4'b0;
                     contador = contador + 1;
-                    if(contador == 33) begin
+                    if(contador >= 32) begin
                         state <= MULT2;
                     end
                     else begin

@@ -1,0 +1,1450 @@
+Analysis & Synthesis report for ProjetoInfraHard
+Sun Mar 28 11:28:20 2021
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 15. Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 16. Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 17. Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 18. Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM
+ 19. Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_One
+ 20. Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Two
+ 21. Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Three
+ 22. Parameter Settings for User Entity Instance: controle:b2v_inst7
+ 23. Port Connectivity Checks: "controle:b2v_inst7"
+ 24. Port Connectivity Checks: "Ula32:b2v_inst6"
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Sun Mar 28 11:28:20 2021        ;
+; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                 ; ProjetoInfraHard                             ;
+; Top-level Entity Name         ; cpu                                          ;
+; Family                        ; Stratix II                                   ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 2,934                                        ;
+;     Dedicated logic registers ; 1,903                                        ;
+; Total registers               ; 1903                                         ;
+; Total pins                    ; 135                                          ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 8,192                                        ;
+; DSP block 9-bit elements      ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
++-------------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; cpu                ; ProjetoInfraHard   ;
+; Family name                                                                ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path                                               ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                       ;
++--------------------------------------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+; cpu.v                                                                          ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/projeto hw/cpu.v                                                            ;
+; instrucoes.mif                                                                 ; yes             ; User Memory Initialization File  ; C:/Users/mandy/Desktop/projeto hw/instrucoes.mif                                                   ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/controle.v                         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/controle.v                         ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_load_size.v          ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_load_size.v          ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_store_size.v         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/StoreLoad/set_store_size.v         ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2.v      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2.v      ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2_mux.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_2_mux.v  ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_16.v     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/shift_left_16.v     ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_1_32.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_1_32.v  ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_16_32.v ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/ShiftsAndSigns/sign_extend_16_32.v ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_b.v            ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_b.v            ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_data_source.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_data_source.v  ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_excpt.v        ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_excpt.v        ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_hi.v           ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_hi.v           ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_iord.v         ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_iord.v         ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_lo.v           ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_lo.v           ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_pc_source.v    ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_pc_source.v    ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_a.v            ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_a.v            ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_regDest.v      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_regDest.v      ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftART.v     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftART.v     ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftSource.v  ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Multiplexadores/mux_shiftSource.v  ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/div.v                      ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/div.v                      ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/mult.v                     ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/MultDiv/mult.v                     ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/concatena_pc.v       ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/concatena_pc.v       ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/inst_concatener.v    ; yes             ; User Verilog HDL File            ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/Concatenacoes/inst_concatener.v    ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Banco_reg.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Banco_reg.vhd   ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Instr_Reg.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Instr_Reg.vhd   ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Memoria.vhd     ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Memoria.vhd     ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/RegDesloc.vhd   ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/RegDesloc.vhd   ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Registrador.vhd ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/Registrador.vhd ;
+; ../faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/ula32.vhd       ; yes             ; User VHDL File                   ; C:/Users/mandy/Desktop/faculdade/Nova pasta/ProjetoIH2020.1GP12/componentesCedidos/ula32.vhd       ;
+; lpm_ram_dq.tdf                                                                 ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/lpm_ram_dq.tdf                       ;
+; altram.tdf                                                                     ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/altram.tdf                           ;
+; altsyncram.tdf                                                                 ; yes             ; Megafunction                     ; m:/alteraquartus91sp2portable/quartus/libraries/megafunctions/altsyncram.tdf                       ;
+; db/altsyncram_g2a1.tdf                                                         ; yes             ; Auto-Generated Megafunction      ; C:/Users/mandy/Desktop/projeto hw/db/altsyncram_g2a1.tdf                                           ;
++--------------------------------------------------------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++-----------------------------------------------+-------+
+; Resource                                      ; Usage ;
++-----------------------------------------------+-------+
+; Estimated ALUTs Used                          ; 2934  ;
+; Dedicated logic registers                     ; 1903  ;
+;                                               ;       ;
+; Estimated ALUTs Unavailable                   ; 424   ;
+;                                               ;       ;
+; Total combinational functions                 ; 2934  ;
+; Combinational ALUT usage by number of inputs  ;       ;
+;     -- 7 input functions                      ; 25    ;
+;     -- 6 input functions                      ; 1167  ;
+;     -- 5 input functions                      ; 448   ;
+;     -- 4 input functions                      ; 406   ;
+;     -- <=3 input functions                    ; 888   ;
+;                                               ;       ;
+; Combinational ALUTs by mode                   ;       ;
+;     -- normal mode                            ; 2565  ;
+;     -- extended LUT mode                      ; 25    ;
+;     -- arithmetic mode                        ; 344   ;
+;     -- shared arithmetic mode                 ; 0     ;
+;                                               ;       ;
+; Estimated ALUT/register pairs used            ; 4318  ;
+;                                               ;       ;
+; Total registers                               ; 1903  ;
+;     -- Dedicated logic registers              ; 1903  ;
+;     -- I/O registers                          ; 0     ;
+;                                               ;       ;
+; Estimated ALMs:  partially or completely used ; 2,159 ;
+;                                               ;       ;
+; I/O pins                                      ; 135   ;
+; Total block memory bits                       ; 8192  ;
+; Maximum fan-out node                          ; CLOCK ;
+; Maximum fan-out                               ; 1935  ;
+; Total fan-out                                 ; 21663 ;
+; Average fan-out                               ; 4.33  ;
++-----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
++-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
++-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; |cpu                                            ; 2934 (1)          ; 1903 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 135  ; 0            ; |cpu                                                                                                             ; work         ;
+;    |Banco_reg:b2v_inst3|                        ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Banco_reg:b2v_inst3                                                                                         ; work         ;
+;    |Instr_Reg:b2v_inst2|                        ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Instr_Reg:b2v_inst2                                                                                         ; work         ;
+;    |Memoria:b2v_inst1|                          ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1                                                                                           ; work         ;
+;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM                                                                            ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Memoria:b2v_inst1|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
+;    |RegDesloc:b2v_inst12|                       ; 418 (418)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|RegDesloc:b2v_inst12                                                                                        ; work         ;
+;    |Registrador:b2v_ALUout|                     ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_ALUout                                                                                      ; work         ;
+;    |Registrador:b2v_A|                          ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_A                                                                                           ;              ;
+;    |Registrador:b2v_B|                          ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_B                                                                                           ; work         ;
+;    |Registrador:b2v_EPC|                        ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_EPC                                                                                         ; work         ;
+;    |Registrador:b2v_HI|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_HI                                                                                          ; work         ;
+;    |Registrador:b2v_LO|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_LO                                                                                          ; work         ;
+;    |Registrador:b2v_Memory_Data_Register|       ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_Memory_Data_Register                                                                        ; work         ;
+;    |Registrador:b2v_PC|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Registrador:b2v_PC                                                                                          ; work         ;
+;    |Ula32:b2v_inst6|                            ; 214 (214)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|Ula32:b2v_inst6                                                                                             ; work         ;
+;    |controle:b2v_inst7|                         ; 254 (254)         ; 80 (80)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|controle:b2v_inst7                                                                                          ; work         ;
+;    |div:b2v_inst15|                             ; 446 (446)         ; 257 (257)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|div:b2v_inst15                                                                                              ; work         ;
+;    |mult:b2v_inst14|                            ; 340 (340)         ; 222 (222)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mult:b2v_inst14                                                                                             ; work         ;
+;    |mux_a:b2v_inst31|                           ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_a:b2v_inst31                                                                                            ; work         ;
+;    |mux_b:b2v_inst36|                           ; 36 (36)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_b:b2v_inst36                                                                                            ; work         ;
+;    |mux_data_source:b2v_inst30|                 ; 152 (152)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_data_source:b2v_inst30                                                                                  ; work         ;
+;    |mux_excpt:b2v_inst25|                       ; 4 (4)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_excpt:b2v_inst25                                                                                        ; work         ;
+;    |mux_iord:b2v_inst26|                        ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_iord:b2v_inst26                                                                                         ; work         ;
+;    |mux_pc_source:b2v_inst35|                   ; 102 (102)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_pc_source:b2v_inst35                                                                                    ; work         ;
+;    |mux_regDest:b2v_inst37|                     ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_regDest:b2v_inst37                                                                                      ; work         ;
+;    |mux_shiftART:b2v_inst28|                    ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_shiftART:b2v_inst28                                                                                     ; work         ;
+;    |mux_shiftSource:b2v_inst27|                 ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|mux_shiftSource:b2v_inst27                                                                                  ; work         ;
+;    |set_load_size:b2v_inst11|                   ; 57 (57)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|set_load_size:b2v_inst11                                                                                    ; work         ;
+;    |set_store_size:b2v_inst10|                  ; 57 (57)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|set_store_size:b2v_inst10                                                                                   ; work         ;
++-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; Name                                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:b2v_inst1|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
+; Memoria:b2v_inst1|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated|ALTSYNCRAM            ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; instrucoes.mif ;
++------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                              ;
++------------------------------------------------------+----------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal              ; Free of Timing Hazards ;
++------------------------------------------------------+----------------------------------+------------------------+
+; set_store_size:b2v_inst10|set_store_size_out[0]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[1]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[2]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[3]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[4]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[5]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[6]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[7]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[8]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[9]      ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[10]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[11]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[12]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[13]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[14]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[15]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[16]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[17]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[18]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[19]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[20]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[21]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[22]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[23]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[24]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[25]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[26]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[27]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[28]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[29]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[30]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; set_store_size:b2v_inst10|set_store_size_out[31]     ; set_store_size:b2v_inst10|Mux24  ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[0]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[1]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[2]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[3]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[4]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[5]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[6]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[7]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[8]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[9]     ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[10]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[11]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[12]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[13]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[14]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[15]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[16]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[17]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[18]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[19]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[20]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[21]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[22]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[23]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[24]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[25]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[26]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[27]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[28]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[29]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[30]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_data_source:b2v_inst30|mux_dataSource_out[31]    ; mux_data_source:b2v_inst30|Mux32 ; yes                    ;
+; mux_regDest:b2v_inst37|mux_regDest_out[0]            ; mux_regDest:b2v_inst37|Mux5      ; yes                    ;
+; mux_regDest:b2v_inst37|mux_regDest_out[1]            ; mux_regDest:b2v_inst37|Mux5      ; yes                    ;
+; mux_regDest:b2v_inst37|mux_regDest_out[2]            ; mux_regDest:b2v_inst37|Mux5      ; yes                    ;
+; mux_regDest:b2v_inst37|mux_regDest_out[3]            ; mux_regDest:b2v_inst37|Mux5      ; yes                    ;
+; mux_regDest:b2v_inst37|mux_regDest_out[4]            ; mux_regDest:b2v_inst37|Mux5      ; yes                    ;
+; set_load_size:b2v_inst11|set_load_size_out[0]        ; set_load_size:b2v_inst11|Mux24   ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[31]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[30]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[28]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[26]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[24]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[22]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[20]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[18]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[16]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[14]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[12]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[10]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[8]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[6]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[4]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[2]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[0]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[1]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[3]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[5]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[7]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[9]                        ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[11]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[13]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[15]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[17]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[19]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[21]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[23]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; mux_a:b2v_inst31|mux_a_out[25]                       ; mux_a:b2v_inst31|Mux32           ; yes                    ;
+; Number of user-specified and inferred latches = 167  ;                                  ;                        ;
++------------------------------------------------------+----------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++-----------------------------------------------------------------------+-----------------------------------------------+
+; Register name                                                         ; Reason for Removal                            ;
++-----------------------------------------------------------------------+-----------------------------------------------+
+; mult:b2v_inst14|ANeg[0,2,4..6,8..10,12..14,16..18,22,24,26..28,30,32] ; Merged with mult:b2v_inst14|ANeg[20]          ;
+; mult:b2v_inst14|A_aux[1..3,5]                                         ; Merged with mult:b2v_inst14|ANeg[20]          ;
+; mult:b2v_inst14|A_aux[7,9..11,13,15,17..19,21,23,25..27]              ; Merged with mult:b2v_inst14|ANeg[19]          ;
+; mult:b2v_inst14|ANeg[7,11,15]                                         ; Merged with mult:b2v_inst14|ANeg[19]          ;
+; mult:b2v_inst14|A_aux[29,31]                                          ; Merged with mult:b2v_inst14|ANeg[19]          ;
+; mult:b2v_inst14|ANeg[1,3,21,23,25,29,31]                              ; Merged with mult:b2v_inst14|ANeg[19]          ;
+; mult:b2v_inst14|Produto[63]                                           ; Merged with mult:b2v_inst14|Produto[64]       ;
+; mult:b2v_inst14|A_aux[4,6,8,12,14,16,20,22,24,28,30,32]               ; Merged with mult:b2v_inst14|A_aux[0]          ;
+; mult:b2v_inst14|hi_entrance[31]                                       ; Merged with mult:b2v_inst14|hi_entrance[30]   ;
+; mult:b2v_inst14|A_aux[0]                                              ; Merged with mult:b2v_inst14|ANeg[20]          ;
+; mult:b2v_inst14|ANeg[19..20]                                          ; Stuck at GND due to stuck port data_in        ;
+; controle:b2v_inst7|muxHI                                              ; Merged with controle:b2v_inst7|muxLO          ;
+; controle:b2v_inst7|AControl                                           ; Merged with controle:b2v_inst7|BControl       ;
+; controle:b2v_inst7|shiftSource                                        ; Merged with controle:b2v_inst7|shiftArtSource ;
+; mult:b2v_inst14|A_aux[33]                                             ; Merged with mult:b2v_inst14|ANeg[33]          ;
+; div:b2v_inst15|Resto[63]                                              ; Stuck at GND due to stuck port data_in        ;
+; Total Number of Removed Registers = 73                                ;                                               ;
++-----------------------------------------------------------------------+-----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1903  ;
+; Number of registers using Synchronous Clear  ; 353   ;
+; Number of registers using Synchronous Load   ; 329   ;
+; Number of registers using Asynchronous Clear ; 1344  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1536  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; controle:b2v_inst7|state[2]            ; 91      ;
+; controle:b2v_inst7|state[4]            ; 76      ;
+; mult:b2v_inst14|counter[5]             ; 4       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 63 bits   ; 126 ALUTs     ; 0 ALUTs              ; 126 ALUTs              ; Yes        ; |cpu|mult:b2v_inst14|lo_entrance[24]    ;
+; 3:1                ; 95 bits   ; 190 ALUTs     ; 0 ALUTs              ; 190 ALUTs              ; Yes        ; |cpu|div:b2v_inst15|Quociente[8]        ;
+; 4:1                ; 63 bits   ; 126 ALUTs     ; 63 ALUTs             ; 63 ALUTs               ; Yes        ; |cpu|div:b2v_inst15|Resto[29]           ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |cpu|Registrador:b2v_B|Saida[21]        ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |cpu|Registrador:b2v_A|Saida[12]        ;
+; 7:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |cpu|div:b2v_inst15|hi_entrance[9]      ;
+; 7:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |cpu|div:b2v_inst15|lo_entrance[19]     ;
+; 128:1              ; 32 bits   ; 2720 ALUTs    ; 0 ALUTs              ; 2720 ALUTs             ; Yes        ; |cpu|controle:b2v_inst7|contador[8]     ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |cpu|RegDesloc:b2v_inst12|temp[5]       ;
+; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |cpu|RegDesloc:b2v_inst12|temp[23]      ;
+; 132:1              ; 5 bits    ; 440 ALUTs     ; 145 ALUTs            ; 295 ALUTs              ; Yes        ; |cpu|controle:b2v_inst7|regControl      ;
+; 132:1              ; 26 bits   ; 2288 ALUTs    ; 988 ALUTs            ; 1300 ALUTs             ; Yes        ; |cpu|controle:b2v_inst7|excptControl[0] ;
+; 194:1              ; 2 bits    ; 258 ALUTs     ; 56 ALUTs             ; 202 ALUTs              ; Yes        ; |cpu|controle:b2v_inst7|sssControl[0]   ;
+; 194:1              ; 2 bits    ; 258 ALUTs     ; 54 ALUTs             ; 204 ALUTs              ; Yes        ; |cpu|controle:b2v_inst7|slsControl[0]   ;
+; 194:1              ; 4 bits    ; 516 ALUTs     ; 112 ALUTs            ; 404 ALUTs              ; Yes        ; |cpu|controle:b2v_inst7|shiftControl[0] ;
+; 3:1                ; 65 bits   ; 130 ALUTs     ; 130 ALUTs            ; 0 ALUTs                ; No         ; |cpu|div:b2v_inst15|Divisor             ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mult:b2v_inst14|Produto            ;
+; 3:1                ; 94 bits   ; 188 ALUTs     ; 188 ALUTs            ; 0 ALUTs                ; No         ; |cpu|mult:b2v_inst14|Produto            ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |cpu|set_store_size:b2v_inst10|Mux23    ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |cpu|set_store_size:b2v_inst10|Mux0     ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |cpu|mux_b:b2v_inst36|Mux31             ;
+; 3:1                ; 15 bits   ; 30 ALUTs      ; 30 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mux_b:b2v_inst36|Mux4              ;
+; 4:1                ; 6 bits    ; 12 ALUTs      ; 12 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mux_iord:b2v_inst26|Mux24          ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |cpu|mux_iord:b2v_inst26|Mux31          ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |cpu|set_load_size:b2v_inst11|Mux19     ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |cpu|set_load_size:b2v_inst11|Mux5      ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mux_a:b2v_inst31|Mux23             ;
+; 4:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; No         ; |cpu|div:b2v_inst15|Divisor             ;
+; 4:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; No         ; |cpu|div:b2v_inst15|Resto               ;
+; 4:1                ; 15 bits   ; 30 ALUTs      ; 30 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mux_b:b2v_inst36|Mux17             ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |cpu|Ula32:b2v_inst6|Mux63              ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |cpu|Ula32:b2v_inst6|Mux10              ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mux_regDest:b2v_inst37|Mux1        ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |cpu|mux_pc_source:b2v_inst35|Mux0      ;
+; 5:1                ; 30 bits   ; 90 ALUTs      ; 90 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mux_pc_source:b2v_inst35|Mux24     ;
+; 10:1               ; 15 bits   ; 90 ALUTs      ; 90 ALUTs             ; 0 ALUTs                ; No         ; |cpu|mux_data_source:b2v_inst30|Mux13   ;
+; 11:1               ; 15 bits   ; 105 ALUTs     ; 105 ALUTs            ; 0 ALUTs                ; No         ; |cpu|mux_data_source:b2v_inst30|Mux21   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                        ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                         ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                 ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                  ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                 ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                  ;
++---------------------------------+--------------------+------+--------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                   ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                    ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM ;
++------------------------+----------------+-------------------------------------+
+; Parameter Name         ; Value          ; Type                                ;
++------------------------+----------------+-------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                      ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                      ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                      ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                             ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                             ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                             ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                             ;
+; USE_EAB                ; ON             ; Untyped                             ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                             ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                             ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                      ;
++------------------------+----------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_One ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                               ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                               ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                               ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                      ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                      ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                      ;
+; USE_EAB                ; ON             ; Untyped                                      ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Two ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                               ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                               ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                               ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                      ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                      ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                      ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                      ;
+; USE_EAB                ; ON             ; Untyped                                      ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                      ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memoria:b2v_inst1|LPM_RAM_DQ:MEM_plus_Three ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTH              ; 8              ; Signed Integer                                 ;
+; LPM_WIDTHAD            ; 8              ; Signed Integer                                 ;
+; LPM_NUMWORDS           ; 0              ; Signed Integer                                 ;
+; LPM_INDATA             ; REGISTERED     ; Untyped                                        ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                        ;
+; LPM_OUTDATA            ; REGISTERED     ; Untyped                                        ;
+; LPM_FILE               ; instrucoes.mif ; Untyped                                        ;
+; USE_EAB                ; ON             ; Untyped                                        ;
+; DEVICE_FAMILY          ; Stratix II     ; Untyped                                        ;
+; CBXI_PARAMETER         ; NOTHING        ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controle:b2v_inst7 ;
++-----------------+---------+-------------------------------------+
+; Parameter Name  ; Value   ; Type                                ;
++-----------------+---------+-------------------------------------+
+; opADDI          ; 001000  ; Unsigned Binary                     ;
+; opADDIU         ; 001001  ; Unsigned Binary                     ;
+; opBEQ           ; 000100  ; Unsigned Binary                     ;
+; opBNE           ; 000101  ; Unsigned Binary                     ;
+; opBLE           ; 000110  ; Unsigned Binary                     ;
+; opBGT           ; 000111  ; Unsigned Binary                     ;
+; opBLM           ; 000001  ; Unsigned Binary                     ;
+; opLB            ; 100000  ; Unsigned Binary                     ;
+; opLH            ; 100001  ; Unsigned Binary                     ;
+; opLUI           ; 001111  ; Unsigned Binary                     ;
+; opLW            ; 100011  ; Unsigned Binary                     ;
+; opSB            ; 101000  ; Unsigned Binary                     ;
+; opSH            ; 101001  ; Unsigned Binary                     ;
+; opSLTI          ; 001010  ; Unsigned Binary                     ;
+; opSW            ; 101011  ; Unsigned Binary                     ;
+; opJ             ; 000010  ; Unsigned Binary                     ;
+; opJAL           ; 000011  ; Unsigned Binary                     ;
+; opRTYPE         ; 000000  ; Unsigned Binary                     ;
+; fADD            ; 100000  ; Unsigned Binary                     ;
+; fSUB            ; 100010  ; Unsigned Binary                     ;
+; fAND            ; 100100  ; Unsigned Binary                     ;
+; fDIV            ; 011010  ; Unsigned Binary                     ;
+; fMULT           ; 011000  ; Unsigned Binary                     ;
+; fMFHI           ; 010000  ; Unsigned Binary                     ;
+; fMFLO           ; 010010  ; Unsigned Binary                     ;
+; fSLL            ; 000000  ; Unsigned Binary                     ;
+; fSLLV           ; 000100  ; Unsigned Binary                     ;
+; fSLT            ; 101010  ; Unsigned Binary                     ;
+; fSRA            ; 000011  ; Unsigned Binary                     ;
+; fSRAV           ; 000111  ; Unsigned Binary                     ;
+; fSRL            ; 000010  ; Unsigned Binary                     ;
+; fJR             ; 001000  ; Unsigned Binary                     ;
+; fBREAK          ; 001101  ; Unsigned Binary                     ;
+; fRTE            ; 010011  ; Unsigned Binary                     ;
+; fXCHG           ; 000101  ; Unsigned Binary                     ;
+; START           ; 0000000 ; Unsigned Binary                     ;
+; ADD             ; 0000001 ; Unsigned Binary                     ;
+; ADD_AND_SUB     ; 0000010 ; Unsigned Binary                     ;
+; ADDI            ; 0000011 ; Unsigned Binary                     ;
+; ADDI_ADDIU      ; 0000100 ; Unsigned Binary                     ;
+; ADDIU           ; 0000101 ; Unsigned Binary                     ;
+; AND             ; 0000110 ; Unsigned Binary                     ;
+; BEQ             ; 0000111 ; Unsigned Binary                     ;
+; BEQ2            ; 1010101 ; Unsigned Binary                     ;
+; BGT             ; 0001000 ; Unsigned Binary                     ;
+; BGT2            ; 0111011 ; Unsigned Binary                     ;
+; BLE             ; 0001001 ; Unsigned Binary                     ;
+; BLE2            ; 0111010 ; Unsigned Binary                     ;
+; BLM             ; 0001010 ; Unsigned Binary                     ;
+; BLM2            ; 0001011 ; Unsigned Binary                     ;
+; BLM3            ; 0111101 ; Unsigned Binary                     ;
+; BLM_WAIT        ; 0001100 ; Unsigned Binary                     ;
+; BNE             ; 0001101 ; Unsigned Binary                     ;
+; BNE2            ; 1101011 ; Unsigned Binary                     ;
+; BREAK           ; 0001111 ; Unsigned Binary                     ;
+; DECODE          ; 0010000 ; Unsigned Binary                     ;
+; DIV             ; 0010001 ; Unsigned Binary                     ;
+; DIV2            ; 1000011 ; Unsigned Binary                     ;
+; DIV_WAIT        ; 1000001 ; Unsigned Binary                     ;
+; DIV0            ; 0010010 ; Unsigned Binary                     ;
+; EXCEPTION       ; 0010011 ; Unsigned Binary                     ;
+; FETCH           ; 0010100 ; Unsigned Binary                     ;
+; FETCH2          ; 0010101 ; Unsigned Binary                     ;
+; FINAL_EXCEPTION ; 0001110 ; Unsigned Binary                     ;
+; J               ; 0010110 ; Unsigned Binary                     ;
+; JAL1            ; 0010111 ; Unsigned Binary                     ;
+; JAL2            ; 0011000 ; Unsigned Binary                     ;
+; JR              ; 0011001 ; Unsigned Binary                     ;
+; LOAD_WAIT       ; 0011100 ; Unsigned Binary                     ;
+; LOAD_WAIT2      ; 1011100 ; Unsigned Binary                     ;
+; LOAD_SET        ; 0111111 ; Unsigned Binary                     ;
+; LUI             ; 0011101 ; Unsigned Binary                     ;
+; LW_LH_LB        ; 0011111 ; Unsigned Binary                     ;
+; MFHI            ; 0100000 ; Unsigned Binary                     ;
+; MFLO            ; 0100001 ; Unsigned Binary                     ;
+; MULT            ; 0100010 ; Unsigned Binary                     ;
+; MULT2           ; 1000010 ; Unsigned Binary                     ;
+; MULT_WAIT       ; 1000000 ; Unsigned Binary                     ;
+; NO_OPCODE       ; 0100011 ; Unsigned Binary                     ;
+; OVERFLOWS       ; 0100100 ; Unsigned Binary                     ;
+; RTE             ; 0100101 ; Unsigned Binary                     ;
+; SB              ; 0100110 ; Unsigned Binary                     ;
+; SH              ; 0100111 ; Unsigned Binary                     ;
+; SHIFT_WAIT      ; 1010111 ; Unsigned Binary                     ;
+; SLL             ; 0101000 ; Unsigned Binary                     ;
+; SLLV            ; 0101001 ; Unsigned Binary                     ;
+; SLT             ; 0101010 ; Unsigned Binary                     ;
+; SLTI            ; 0101011 ; Unsigned Binary                     ;
+; SRA             ; 0101100 ; Unsigned Binary                     ;
+; SRAV            ; 0101101 ; Unsigned Binary                     ;
+; SREG_OUT        ; 0101110 ; Unsigned Binary                     ;
+; SRL             ; 0101111 ; Unsigned Binary                     ;
+; STORE_PC        ; 0110000 ; Unsigned Binary                     ;
+; STORE_SET       ; 0011110 ; Unsigned Binary                     ;
+; STORE_WAIT      ; 0110001 ; Unsigned Binary                     ;
+; STORE_WAIT2     ; 1011101 ; Unsigned Binary                     ;
+; SUB             ; 0110010 ; Unsigned Binary                     ;
+; SW              ; 0110011 ; Unsigned Binary                     ;
+; SW_SH_SB1       ; 0110100 ; Unsigned Binary                     ;
+; SW_SH_SB2       ; 0110101 ; Unsigned Binary                     ;
+; WAIT            ; 0110110 ; Unsigned Binary                     ;
+; WAIT_FINAL      ; 0111001 ; Unsigned Binary                     ;
+; XCHG1           ; 0110111 ; Unsigned Binary                     ;
+; XCHG2           ; 0111000 ; Unsigned Binary                     ;
++-----------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controle:b2v_inst7"                                                                                       ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; state ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Ula32:b2v_inst6"                                                                                             ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; negativo ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; z        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sun Mar 28 11:27:58 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoInfraHard -c ProjetoInfraHard
+Info: Found 1 design units, including 1 entities, in source file cpu.v
+    Info: Found entity 1: cpu
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/controle.v
+    Info: Found entity 1: controle
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/storeload/set_load_size.v
+    Info: Found entity 1: set_load_size
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/storeload/set_store_size.v
+    Info: Found entity 1: set_store_size
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/shift_left_2.v
+    Info: Found entity 1: shift_left_2
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/shift_left_2_mux.v
+    Info: Found entity 1: shift_left_2_mux
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/shift_left_16.v
+    Info: Found entity 1: shift_left_16
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/sign_extend_1_32.v
+    Info: Found entity 1: sign_extend_1_32
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/shiftsandsigns/sign_extend_16_32.v
+    Info: Found entity 1: sign_extend_16_32
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_b.v
+    Info: Found entity 1: mux_b
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_data_source.v
+    Info: Found entity 1: mux_data_source
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_excpt.v
+    Info: Found entity 1: mux_excpt
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_hi.v
+    Info: Found entity 1: mux_hi
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_iord.v
+    Info: Found entity 1: mux_iord
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_lo.v
+    Info: Found entity 1: mux_lo
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_pc_source.v
+    Info: Found entity 1: mux_pc_source
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_a.v
+    Info: Found entity 1: mux_a
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_regdest.v
+    Info: Found entity 1: mux_regDest
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_shiftart.v
+    Info: Found entity 1: mux_shiftART
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multiplexadores/mux_shiftsource.v
+    Info: Found entity 1: mux_shiftSource
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multdiv/div.v
+    Info: Found entity 1: div
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/multdiv/mult.v
+    Info: Found entity 1: mult
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/concatenacoes/concatena_pc.v
+    Info: Found entity 1: concatena_pc
+Info: Found 1 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/concatenacoes/inst_concatener.v
+    Info: Found entity 1: inst_concatener
+Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/banco_reg.vhd
+    Info: Found design unit 1: Banco_reg-behavioral_arch
+    Info: Found entity 1: Banco_reg
+Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/instr_reg.vhd
+    Info: Found design unit 1: Instr_Reg-behavioral_arch
+    Info: Found entity 1: Instr_Reg
+Info: Found 3 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/memoria.vhd
+    Info: Found design unit 1: ram_constants
+    Info: Found design unit 2: Memoria-behavioral_arch
+    Info: Found entity 1: Memoria
+Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/regdesloc.vhd
+    Info: Found design unit 1: RegDesloc-behavioral_arch
+    Info: Found entity 1: RegDesloc
+Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/registrador.vhd
+    Info: Found design unit 1: Registrador-behavioral_arch
+    Info: Found entity 1: Registrador
+Info: Found 2 design units, including 1 entities, in source file /users/mandy/desktop/faculdade/nova pasta/projetoih2020.1gp12/componentescedidos/ula32.vhd
+    Info: Found design unit 1: Ula32-behavioral
+    Info: Found entity 1: Ula32
+Info: Found 1 design units, including 1 entities, in source file projetoinfrahard.bdf
+    Info: Found entity 1: ProjetoInfraHard
+Info: Elaborating entity "cpu" for the top level hierarchy
+Info: Elaborating entity "Registrador" for hierarchy "Registrador:b2v_A"
+Info: Elaborating entity "Memoria" for hierarchy "Memoria:b2v_inst1"
+Info: Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:b2v_inst1|LPM_RAM_DQ:MEM"
+Info: Elaborated megafunction instantiation "Memoria:b2v_inst1|LPM_RAM_DQ:MEM"
+Info: Instantiated megafunction "Memoria:b2v_inst1|LPM_RAM_DQ:MEM" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+    Info: Parameter "LPM_NUMWORDS" = "0"
+    Info: Parameter "LPM_INDATA" = "REGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info: Parameter "LPM_FILE" = "instrucoes.mif"
+    Info: Parameter "LPM_TYPE" = "LPM_RAM_DQ"
+    Info: Parameter "USE_EAB" = "ON"
+    Info: Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
+    Info: Parameter "LPM_HINT" = "UNUSED"
+Info: Elaborating entity "altram" for hierarchy "Memoria:b2v_inst1|LPM_RAM_DQ:MEM|altram:sram"
+Warning: Assertion warning: altram does not support Stratix II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Stratix II devices
+Info: Elaborated megafunction instantiation "Memoria:b2v_inst1|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:b2v_inst1|LPM_RAM_DQ:MEM"
+Info: Elaborating entity "altsyncram" for hierarchy "Memoria:b2v_inst1|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block"
+Info: Elaborated megafunction instantiation "Memoria:b2v_inst1|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "Memoria:b2v_inst1|LPM_RAM_DQ:MEM"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
+    Info: Found entity 1: altsyncram_g2a1
+Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:b2v_inst1|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Info: Elaborating entity "set_store_size" for hierarchy "set_store_size:b2v_inst10"
+Warning (10270): Verilog HDL Case Statement warning at set_store_size.v(8): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at set_store_size.v(8): inferring latch(es) for variable "set_store_size_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "set_store_size_out[0]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[1]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[2]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[3]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[4]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[5]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[6]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[7]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[8]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[9]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[10]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[11]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[12]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[13]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[14]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[15]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[16]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[17]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[18]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[19]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[20]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[21]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[22]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[23]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[24]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[25]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[26]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[27]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[28]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[29]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[30]" at set_store_size.v(8)
+Info (10041): Inferred latch for "set_store_size_out[31]" at set_store_size.v(8)
+Info: Elaborating entity "set_load_size" for hierarchy "set_load_size:b2v_inst11"
+Warning (10270): Verilog HDL Case Statement warning at set_load_size.v(7): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at set_load_size.v(7): inferring latch(es) for variable "set_load_size_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "set_load_size_out[0]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[1]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[2]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[3]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[4]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[5]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[6]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[7]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[8]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[9]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[10]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[11]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[12]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[13]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[14]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[15]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[16]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[17]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[18]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[19]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[20]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[21]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[22]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[23]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[24]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[25]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[26]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[27]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[28]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[29]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[30]" at set_load_size.v(7)
+Info (10041): Inferred latch for "set_load_size_out[31]" at set_load_size.v(7)
+Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:b2v_inst12"
+Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(1072): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "mult" for hierarchy "mult:b2v_inst14"
+Info (10264): Verilog HDL Case Statement information at mult.v(36): all case item expressions in this case statement are onehot
+Info: Elaborating entity "div" for hierarchy "div:b2v_inst15"
+Warning (10230): Verilog HDL assignment warning at div.v(78): truncated value with size 64 to match size of target (32)
+Info: Elaborating entity "inst_concatener" for hierarchy "inst_concatener:b2v_inst18"
+Info: Elaborating entity "shift_left_2" for hierarchy "shift_left_2:b2v_inst19"
+Info: Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:b2v_inst2"
+Info: Elaborating entity "concatena_pc" for hierarchy "concatena_pc:b2v_inst20"
+Info: Elaborating entity "shift_left_2_mux" for hierarchy "shift_left_2_mux:b2v_inst21"
+Info: Elaborating entity "sign_extend_1_32" for hierarchy "sign_extend_1_32:b2v_inst22"
+Warning (10034): Output port "sign_extend_out[31..1]" at sign_extend_1_32.v(4) has no driver
+Info: Elaborating entity "shift_left_16" for hierarchy "shift_left_16:b2v_inst23"
+Info: Elaborating entity "mux_excpt" for hierarchy "mux_excpt:b2v_inst25"
+Warning (10270): Verilog HDL Case Statement warning at mux_excpt.v(7): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux_excpt.v(7): inferring latch(es) for variable "mux_excpt_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "mux_excpt_out[0]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[1]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[2]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[3]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[4]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[5]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[6]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[7]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[8]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[9]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[10]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[11]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[12]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[13]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[14]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[15]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[16]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[17]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[18]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[19]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[20]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[21]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[22]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[23]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[24]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[25]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[26]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[27]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[28]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[29]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[30]" at mux_excpt.v(7)
+Info (10041): Inferred latch for "mux_excpt_out[31]" at mux_excpt.v(7)
+Info: Elaborating entity "mux_iord" for hierarchy "mux_iord:b2v_inst26"
+Info: Elaborating entity "mux_shiftSource" for hierarchy "mux_shiftSource:b2v_inst27"
+Info: Elaborating entity "mux_shiftART" for hierarchy "mux_shiftART:b2v_inst28"
+Info: Elaborating entity "Banco_reg" for hierarchy "Banco_reg:b2v_inst3"
+Info: Elaborating entity "mux_data_source" for hierarchy "mux_data_source:b2v_inst30"
+Warning (10270): Verilog HDL Case Statement warning at mux_data_source.v(16): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux_data_source.v(16): inferring latch(es) for variable "mux_dataSource_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "mux_dataSource_out[0]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[1]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[2]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[3]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[4]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[5]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[6]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[7]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[8]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[9]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[10]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[11]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[12]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[13]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[14]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[15]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[16]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[17]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[18]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[19]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[20]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[21]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[22]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[23]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[24]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[25]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[26]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[27]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[28]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[29]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[30]" at mux_data_source.v(16)
+Info (10041): Inferred latch for "mux_dataSource_out[31]" at mux_data_source.v(16)
+Info: Elaborating entity "mux_a" for hierarchy "mux_a:b2v_inst31"
+Warning (10270): Verilog HDL Case Statement warning at mux_a.v(10): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux_a.v(10): inferring latch(es) for variable "mux_a_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "mux_a_out[0]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[1]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[2]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[3]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[4]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[5]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[6]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[7]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[8]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[9]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[10]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[11]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[12]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[13]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[14]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[15]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[16]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[17]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[18]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[19]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[20]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[21]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[22]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[23]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[24]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[25]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[26]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[27]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[28]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[29]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[30]" at mux_a.v(10)
+Info (10041): Inferred latch for "mux_a_out[31]" at mux_a.v(10)
+Info: Elaborating entity "mux_hi" for hierarchy "mux_hi:b2v_inst33"
+Info: Elaborating entity "mux_lo" for hierarchy "mux_lo:b2v_inst34"
+Info: Elaborating entity "mux_pc_source" for hierarchy "mux_pc_source:b2v_inst35"
+Warning (10270): Verilog HDL Case Statement warning at mux_pc_source.v(11): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux_pc_source.v(11): inferring latch(es) for variable "mux_pc_source_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "mux_pc_source_out[0]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[1]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[2]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[3]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[4]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[5]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[6]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[7]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[8]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[9]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[10]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[11]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[12]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[13]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[14]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[15]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[16]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[17]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[18]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[19]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[20]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[21]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[22]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[23]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[24]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[25]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[26]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[27]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[28]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[29]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[30]" at mux_pc_source.v(11)
+Info (10041): Inferred latch for "mux_pc_source_out[31]" at mux_pc_source.v(11)
+Info: Elaborating entity "mux_b" for hierarchy "mux_b:b2v_inst36"
+Info: Elaborating entity "mux_regDest" for hierarchy "mux_regDest:b2v_inst37"
+Warning (10270): Verilog HDL Case Statement warning at mux_regDest.v(10): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at mux_regDest.v(10): inferring latch(es) for variable "mux_regDest_out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "mux_regDest_out[0]" at mux_regDest.v(10)
+Info (10041): Inferred latch for "mux_regDest_out[1]" at mux_regDest.v(10)
+Info (10041): Inferred latch for "mux_regDest_out[2]" at mux_regDest.v(10)
+Info (10041): Inferred latch for "mux_regDest_out[3]" at mux_regDest.v(10)
+Info (10041): Inferred latch for "mux_regDest_out[4]" at mux_regDest.v(10)
+Info: Elaborating entity "sign_extend_16_32" for hierarchy "sign_extend_16_32:b2v_inst38"
+Info: Elaborating entity "Ula32" for hierarchy "Ula32:b2v_inst6"
+Info: Elaborating entity "controle" for hierarchy "controle:b2v_inst7"
+Warning: 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[0]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch set_store_size:b2v_inst10|set_store_size_out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|sssControl[1]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[3]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[0]
+Warning: Latch mux_data_source:b2v_inst30|mux_dataSource_out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|dataSource[3]
+Warning: Latch mux_regDest:b2v_inst37|mux_regDest_out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|regDest[1]
+Warning: Latch mux_regDest:b2v_inst37|mux_regDest_out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|regDest[2]
+Warning: Latch mux_regDest:b2v_inst37|mux_regDest_out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|regDest[1]
+Warning: Latch mux_regDest:b2v_inst37|mux_regDest_out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|regDest[1]
+Warning: Latch mux_regDest:b2v_inst37|mux_regDest_out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|regDest[1]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch mux_a:b2v_inst31|mux_a_out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|muxAControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[0]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch set_load_size:b2v_inst11|set_load_size_out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|slsControl[1]
+Warning: Latch mux_excpt:b2v_inst25|mux_excpt_out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|excptControl[0]
+Warning: Latch mux_excpt:b2v_inst25|mux_excpt_out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|excptControl[0]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[2]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[2]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Warning: Latch mux_pc_source:b2v_inst35|mux_pc_source_out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal controle:b2v_inst7|PCSource[1]
+Info: Generated suppressed messages file C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.map.smsg
+Info: Implemented 4616 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 133 output pins
+    Info: Implemented 4449 logic cells
+    Info: Implemented 32 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 321 warnings
+    Info: Peak virtual memory: 277 megabytes
+    Info: Processing ended: Sun Mar 28 11:28:20 2021
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:23
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/mandy/Desktop/projeto hw/ProjetoInfraHard.map.smsg.
+
+

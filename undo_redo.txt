@@ -1,0 +1,40 @@
+GED
+
+	Undo Commands
+	     1.	Delete
+	     2.	Delete
+	     3.	Delete
+	     4.	Delete
+	     5.	Move
+	     6.	Insert Bus
+	     7.	Insert Bus
+	     8.	Insert Bus
+	     9.	Properties
+	    10.	Move
+	    11.	Insert Symbol
+	    12.	Update Symbol or Block
+	    13.	Update Symbol or Block
+	    14.	Update Symbol or Block
+
+
+WED
+
+	Undo Commands
+	     1.	Delete Node, Bus or Waveform Divider
+	     2.	Insert Node or Bus
+	     3.	Delete Node, Bus or Waveform Divider
+	     4.	Insert Node or Bus
+
+
+RPW
+
+	Undo Commands
+	     1.	||Simulation Report||Simulator||Simulation Waveforms
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+
